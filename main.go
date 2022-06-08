@@ -26,9 +26,9 @@ var projetos = []projeto{
 }
 
 var pessoas = []pessoa{
-    {ID: "1", Nome: "Bruno de Calcinha", Id_Profissao: "45"},
-    {ID: "2", Nome: "Pedro Pelado", Id_Profissao: "12"},
-    {ID: "3", Nome: "Caio de Sunga", Id_Profissao: "13"},
+    {ID: "1", Nome: "Bruno", Id_Profissao: "45"},
+    {ID: "2", Nome: "Pedro", Id_Profissao: "12"},
+    {ID: "3", Nome: "Caio", Id_Profissao: "13"},
 }
 
 func main() {
@@ -40,6 +40,8 @@ func main() {
     router.GET("/pessoas", getPessoas)
     router.GET("/pessoas/:id", getpessoaByID)
     router.POST("/pessoas", postpessoas)
+    router.DELETE("/pessoas/:id", deletePessoaById)
+    router.PUT("/pessoas/:id", updatePessoaById)
 
     router.Run("localhost:8080")
 }
@@ -112,7 +114,7 @@ func getpessoaByID(c *gin.Context) {
     c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
 }
 
-func deletePessoa(c *gin.Context) {
+func deletePessoaById(c *gin.Context) {
     id := c.Param("id")
     for i, a := range pessoas {
         if a.ID == id {
@@ -122,12 +124,12 @@ func deletePessoa(c *gin.Context) {
     }
 }
 
-func updatePessoa(c *gin.Context) {
+func updatePessoaById(c *gin.Context) {
     id := c.Param("id")
-    for _, a := range pessoas {
-        if a.ID == id {
-        c.BindJSON(&a)
-        c.IndentedJSON(http.StatusOK,a)
+    for i := range pessoas {
+        if pessoas[i].ID == id {
+        c.BindJSON(&pessoas[i])
+        c.IndentedJSON(http.StatusOK,pessoas[i])
         return
         }
     }
