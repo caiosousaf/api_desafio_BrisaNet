@@ -1,9 +1,8 @@
 package main
 
 import (
-    "net/http"
-
-    "github.com/gin-gonic/gin"
+	"net/http"
+	"github.com/gin-gonic/gin"
 )
 
 // projeto represents data about a record projeto.
@@ -111,4 +110,25 @@ func getpessoaByID(c *gin.Context) {
         }
     }
     c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
+}
+
+func deletePessoa(c *gin.Context) {
+    id := c.Param("id")
+    for i, a := range pessoas {
+        if a.ID == id {
+            pessoas = append(pessoas[:i], pessoas[i+1:]... )
+            return
+        }
+    }
+}
+
+func updatePessoa(c *gin.Context) {
+    id := c.Param("id")
+    for _, a := range pessoas {
+        if a.ID == id {
+        c.BindJSON(&a)
+        c.IndentedJSON(http.StatusOK,a)
+        return
+        }
+    }
 }
