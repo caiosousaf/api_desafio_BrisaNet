@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -25,14 +26,18 @@ type equipe struct {
     IDMembers string `json:"idmembers"`
 }
 
-
-
-
-
+type tarefa struct {
+    ID string `json:"id"`
+    Nome string `json:"nome"`
+    Description string `json:"description"`
+    ID_Project string `json:"ID_Projeto"`
+    ID_Equipe string `json:"ID_Equipe"`
+    Tempo string `json:"tempo"`
+}
 
 // projetos slice to seed record projeto data.
 var projetos = []projeto{
-    {ID: "1", Title: "Blue Train", Description: "talvez de certo", IDequipe: "1"},
+    {ID: "1", Title: "Central de Relacionamento", Description: "Sugestões", IDequipe: "1"},
     {ID: "2", Title: "Jeru", Description: "talvez de certo", IDequipe: "2"},
     {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Description: "talvez de certo", IDequipe: "3"},
 }
@@ -49,14 +54,29 @@ var equipes = []equipe{
     {ID: "3", Nome: "Kariri Inovação", IDMembers: ""},
 }
 
+var tarefas = []tarefa {
+    {ID: "1", Nome: "Criação de API REST", Description: "Utilizar GO LANG com Gin", ID_Project: "1", ID_Equipe: "", Tempo: ""},
+    {ID: "2", Nome: "Teste", Description: "Apenas Teste", ID_Project: "1", ID_Equipe: "", Tempo: ""},
+    {ID: "3", Nome: "Teste", Description: "Apenas Teste", ID_Project: "1", ID_Equipe: "", Tempo: ""},
+    {ID: "4", Nome: "Teste", Description: "Apenas Teste", ID_Project: "1", ID_Equipe: "", Tempo: ""},
+    {ID: "5", Nome: "Teste", Description: "Apenas Teste", ID_Project: "1", ID_Equipe: "", Tempo: ""},
+}
+
 func main() {
     router := gin.Default()
     router.GET("/projetos", getprojetos)
     router.GET("/projetos/:id", getprojetoByID)
+    router.GET("/projetos/:id/tarefas", getTarefasByProject)
     router.POST("/projetos", postprojetos)
     router.PUT("/projetos/:id", editProjetoById)
     router.DELETE("/projetos/:id", deleteProjetoById)
     router.GET("/projetos/equipes/:id", getEquipeByID)
+
+    router.GET("/tarefas", getTarefas)
+    router.GET("/tarefas/:id", getTarefaByID)
+    router.POST("/tarefas", postTarefas)
+    router.PUT("/tarefas/:id", editTarefaById)
+    router.DELETE("/tarefas/:id", deleteTarefaById)
 
     router.GET("/equipes", getEquipes)
     router.GET("/equipes/:id", getEquipeByID)
@@ -85,6 +105,10 @@ func getPessoas(c *gin.Context) {
 
 func getEquipes(c *gin.Context) {
     c.IndentedJSON(http.StatusOK, equipes)
+}
+
+func getTarefas(c *gin.Context) {
+    c.IndentedJSON(http.StatusOK, tarefas)
 }
 
 // postprojetos adds an projeto from JSON received in the request body.
@@ -247,4 +271,66 @@ func updatePessoaById(c *gin.Context) {
         return
         }
     }
+}
+
+func getTarefaByID(c *gin.Context) {
+    id := c.Param("id")
+    for _, a := range tarefas {
+        if a.ID == id {
+            c.IndentedJSON(http.StatusOK, a)
+            return
+        }
+    }
+    c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Tarefa not found"})
+}
+
+func postTarefas(c *gin.Context) {
+    var newtarefa tarefa
+
+    // Call BindJSON to bind the received JSON to
+    // newpessoa.
+    if err := c.BindJSON(&newtarefa); err != nil {
+        return
+    }
+
+    // Add the new pessoa to the slice.
+    tarefas = append(tarefas, newtarefa)
+    c.IndentedJSON(http.StatusCreated, newtarefa)
+}
+
+func editTarefaById(c *gin.Context) {
+    id := c.Param("id")
+    for i := range tarefas {
+        if tarefas[i].ID == id {
+        c.BindJSON(&tarefas[i])
+        c.IndentedJSON(http.StatusOK,tarefas[i])
+        return
+        }
+    }
+}
+
+func deleteTarefaById(c *gin.Context) {
+    id := c.Param("id")
+    for i, a := range tarefas {
+        if a.ID == id {
+            tarefas = append(tarefas[:i], tarefas[i+1:]... )
+            return
+        }
+    }
+}
+
+func getTarefasByProject(c *gin.Context) {
+	id := c.Param("id")
+	count := 0
+	for _, a := range tarefas {
+		if a.ID_Project == id {
+			c.IndentedJSON(http.StatusOK, a)
+			count+=1
+		}
+	}
+	if(count > 0){
+		return
+	} else{
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+	}
 }
