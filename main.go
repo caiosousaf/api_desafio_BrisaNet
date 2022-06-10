@@ -18,12 +18,12 @@ type pessoa struct {
     ID_Pessoa     string  `json:"id"`
     Nome  string  `json:"nome"`
     Profissao string  `json:"profissao"`
+    ID_Equipe string `json:"equipe"`
 }
 
 type equipe struct {
     Nome string `json:"nome"`
     ID_Equipe string   `json:"id"`
-    IDMembers string `json:"idmembers"`
 }
 
 type tarefa struct {
@@ -43,15 +43,15 @@ var projetos = []projeto{
 }
 
 var pessoas = []pessoa{
-    {ID_Pessoa: "1", Nome: "Bruno", Profissao: "45"},
-    {ID_Pessoa: "2", Nome: "Pedro", Profissao: "12"},
-    {ID_Pessoa: "3", Nome: "Caio",  Profissao: "13"},
+    {ID_Pessoa: "1", Nome: "Bruno", Profissao: "Dev-Ops", ID_Equipe: "1"},
+    {ID_Pessoa: "2", Nome: "Pedro", Profissao: "Back-End", ID_Equipe: "1"},
+    {ID_Pessoa: "3", Nome: "Caio",  Profissao: "Front-End", ID_Equipe: "1"},
 }
 
 var equipes = []equipe{
-    {ID_Equipe: "1", Nome: "Komanda", IDMembers: "3, 2, 1"},
-    {ID_Equipe: "2", Nome: "DevsCariri", IDMembers: ""},
-    {ID_Equipe: "3", Nome: "Kariri Inovação", IDMembers: ""},
+    {ID_Equipe: "1", Nome: "Komanda",},
+    {ID_Equipe: "2", Nome: "DevsCariri"},
+    {ID_Equipe: "3", Nome: "Kariri Inovação"},
 }
 
 var tarefas = []tarefa {
@@ -249,27 +249,21 @@ func getEquipeByID(c *gin.Context) {
     }
     c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Equipe not found"})
 }      
-
+// shows the members of a team by id on the screen
 func getMembersInEquipeByID(c *gin.Context) {
-    id := c.Param("id")
-    count := 0
-    for _, a := range equipes {
-        for _, i := range pessoas {
-            if a.ID_Equipe == id {
-            c.IndentedJSON(http.StatusOK, i)
-            
-            count += 1
-        }
-    }
-    if count > 0 {
-        return
-    } else {
-        c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Equipe not found"})
-    }
-        }
-        
+	id := c.Param("id")
+	for _, a := range equipes {
+		if a.ID_Equipe == id {
+			for _, b := range pessoas {
+				if b.ID_Equipe == a.ID_Equipe {
+					c.IndentedJSON(http.StatusOK, b)
+				}
+			}
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "equipe not found"})
 }
-
 
     // Delete a person from the list of people by Id
 func deletePessoaById(c *gin.Context) {
@@ -355,6 +349,7 @@ func getTarefasByProject(c *gin.Context) {
 		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
 	}
 }
+// function publish a task in a given project
 
 func postTarefaProjeto(c *gin.Context){
     id := c.Param("id")
@@ -362,13 +357,13 @@ func postTarefaProjeto(c *gin.Context){
     for _, a := range projetos {
         if a.ID_Projeto == id {
                 var newtarefa tarefa
-                // Call BindJSON to bind the received JSON to
-                // newpessoa.
+                // Call BindJSON to bind the received JSON to new tarefa
+                
                 if err := c.BindJSON(&newtarefa); err != nil {
                     return
                 }
     
-                // Add the new pessoa to the slice.
+                // Add the new Tarefa to the slice by Project.
                 tarefas = append(tarefas, newtarefa)
                 c.IndentedJSON(http.StatusCreated, newtarefa)
                 return
