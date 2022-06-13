@@ -105,7 +105,7 @@ func main() {
 	router.PUT("/pessoas/:id", updatePessoaById)
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-	router.Run("localhost:8080")
+	router.Run(":8080")
 }
 
 // @BasePath /
