@@ -1,9 +1,10 @@
 package main
 
 import (
-	"net/http"
-
 	docs "TESTE/docs"
+	"net/http"
+	"os"
+
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -105,7 +106,8 @@ func main() {
 	router.PUT("/pessoas/:id", updatePessoaById)
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-	router.Run(":8080")
+	port := os.Getenv("PORT")
+	router.Run(":"+port)
 }
 
 // @BasePath /
