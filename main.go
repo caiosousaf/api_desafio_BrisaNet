@@ -3,8 +3,7 @@ package main
 import (
 	docs "TESTE/docs"
 	"net/http"
-	"os"
-
+	//"os"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -23,6 +22,7 @@ type pessoa struct {
 	Nome      string `json:"nome"`
 	Profissao string `json:"profissao"`
 	ID_Equipe string `json:"equipe"`
+	ID_Tarefa []string `json:"tarefa"`
 }
 
 type equipe struct {
@@ -41,15 +41,15 @@ type tarefa struct {
 
 // projetos slice to seed record projeto data.
 var projetos = []projeto{
-	{ID_Projeto: "1", Title: "Central de Relacionamento", Description: "Sugestões", IDequipe: "1"},
+	{ID_Projeto: "1", Title: "Central de Relacionamento", Description: "Sugestões", IDequipe: "1", },
 	{ID_Projeto: "2", Title: "Jeru", Description: "talvez de certo", IDequipe: "2"},
 	{ID_Projeto: "3", Title: "Sarah Vaughan and Clifford Brown", Description: "talvez de certo", IDequipe: "3"},
 }
 
 var pessoas = []pessoa{
-	{ID_Pessoa: "1", Nome: "Bruno", Profissao: "Dev-Ops", ID_Equipe: "1"},
-	{ID_Pessoa: "2", Nome: "Pedro", Profissao: "Back-End", ID_Equipe: "1"},
-	{ID_Pessoa: "3", Nome: "Caio", Profissao: "Front-End", ID_Equipe: "1"},
+	{ID_Pessoa: "1", Nome: "Bruno", Profissao: "Dev-Ops", ID_Equipe: "1", ID_Tarefa: []string{"1", "4", "5"}},
+	{ID_Pessoa: "2", Nome: "Pedro", Profissao: "Back-End", ID_Equipe: "1", ID_Tarefa: []string{"1", "3"}},
+	{ID_Pessoa: "3", Nome: "Caio", Profissao: "Front-End", ID_Equipe: "1", ID_Tarefa: []string{"3", "2"}},
 }
 
 var equipes = []equipe{
@@ -91,6 +91,7 @@ func main() {
 	router.POST("/tarefas", postTarefas)
 	router.PUT("/tarefas/:id", editTarefaById)
 	router.DELETE("/tarefas/:id", deleteTarefaById)
+	router.GET("/tarefas/:id/pessoas", getTarefaByPessoa)
 
 	router.GET("/equipes", getEquipes)
 	router.GET("/equipes/:id", getEquipeByID)
@@ -104,10 +105,13 @@ func main() {
 	router.POST("/pessoas", postpessoas)
 	router.DELETE("/pessoas/:id", deletePessoaById)
 	router.PUT("/pessoas/:id", updatePessoaById)
+	router.GET("/pessoas/:id/tarefas", getPessoaByIdTarefas)
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-	port := os.Getenv("PORT")
-	router.Run(":"+port)
+	//port := os.Getenv("PORT")
+	//router.Run(":"+port)
+	router.Run()
+	//https://api-desafio-brisa1.herokuapp.com/swagger/index.html#/
 }
 
 // @BasePath /
@@ -133,17 +137,23 @@ func getTarefas(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, tarefas)
 }
 
-// postprojetos adds an projeto from JSON received in the request body.
+// @BasePath /
+// Post New Project
+// @Summary Post New Project
+// @Param		id	path			string true "Projeto ID"
+// @Param		title path			string true "Projeto Title"
+// @Param		Description path 	string true "Projeto Description"
+// @Param		equipe path 		string true "Projeto equipe"
+// @Produce json
+// @Success 200 {object} projeto
+// @Router /projetos/ [post]
 func postprojetos(c *gin.Context) {
 	var newprojeto projeto
 
-	// Call BindJSON to bind the received JSON to
-	// newprojeto.
 	if err := c.BindJSON(&newprojeto); err != nil {
 		return
 	}
 
-	// Add the new projeto to the slice.
 	projetos = append(projetos, newprojeto)
 	c.IndentedJSON(http.StatusCreated, newprojeto)
 }
@@ -316,6 +326,31 @@ func updatePessoaById(c *gin.Context) {
 	}
 }
 
+func getPessoaByIdTarefas(c *gin.Context){
+    id := c.Param("id")
+    count := 0
+    for _, a := range pessoas {
+        if a.ID_Pessoa == id {
+            c.IndentedJSON(http.StatusOK, a)
+            outrocont := 0
+            for range a.ID_Tarefa{
+                for _, b := range tarefas {
+                    if a.ID_Tarefa[outrocont] == b.ID_Tarefa{
+                        c.IndentedJSON(http.StatusOK, b)
+                        outrocont+=1
+                    }
+                }
+            }
+            count+=1
+        }
+    }
+    if(count > 0){
+		return
+	} else{
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+	}
+}
+
 func getTarefaByID(c *gin.Context) {
 	id := c.Param("id")
 	for _, a := range tarefas {
@@ -363,6 +398,28 @@ func deleteTarefaById(c *gin.Context) {
 		}
 	}
 }
+
+func getTarefaByPessoa(c *gin.Context) {
+	id := c.Param("id")
+	count := 0
+	for _, a := range pessoas {
+        outrocont := 0
+        for range a.ID_Tarefa{
+		    if a.ID_Tarefa[outrocont] == id {
+			    c.IndentedJSON(http.StatusOK, a)
+			    count+=1
+                break
+		    }
+            outrocont++
+        }
+	}
+	if(count > 0){
+		return
+	} else{
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+	}
+}
+
 
 func getTarefasByProject(c *gin.Context) {
 	id := c.Param("id")
