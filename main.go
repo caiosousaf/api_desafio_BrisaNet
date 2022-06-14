@@ -450,24 +450,33 @@ func deleteTarefaById(c *gin.Context) {
 	}
 }
 
-func getTarefaByPessoa(c *gin.Context) {
-	id := c.Param("id")
-	count := 0
-	for _, a := range pessoas {
-        outrocont := 0
-        for range a.ID_Tarefa{
-		    if a.ID_Tarefa[outrocont] == id {
-			    c.IndentedJSON(http.StatusOK, a)
-			    count+=1
-                break
-		    }
-            outrocont++
+func getTarefaByPessoa(c *gin.Context){
+    id := c.Param("id")
+    count := 0
+    for _, a := range pessoas {
+        if a.ID_Pessoa == id {
+            c.IndentedJSON(http.StatusOK, a)
+            outrocont := 0
+            for range a.ID_Tarefa{
+                for _, b := range tarefas {
+                    if a.ID_Tarefa[outrocont] == b.ID_Tarefa{
+                        c.IndentedJSON(http.StatusOK, b)
+                        outrocont+=1
+                    }
+                }
+            }
+            if(outrocont > 0){
+                return
+            } else{
+                c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+            }
+            count+=1
         }
-	}
-	if(count > 0){
+    }
+    if(count > 0){
 		return
 	} else{
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
 	}
 }
 
@@ -511,6 +520,6 @@ func postTarefaProjeto(c *gin.Context) {
 	if count > 0 {
 		return
 	} else {
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "projeto not found"})
 	}
 }
