@@ -17,7 +17,7 @@ da equipe podem se atribuir.
 
 ## Membros:
 <div>-<a href="https://github.com/caiosousaf"> Caio Sousa:</a>  Desenvolvimento dos metódos GET, POST, PUT e DELETE, e iniciado desenvolvimento do swagger e da documentação da API.</div>
-<div>-<a href="https://github.com/PedroMiguel7"> Pedro Miguel:</a>  Desenvolvimento e atualização dos metódos GET, POST, PUT e DELETE, mais a atualização dos elementos projetos para associar mais de uma equipe, e pessoas para associar a mais de uma equipe e tarefa.</div> 
+<div>-<a href="https://github.com/PedroMiguel7"> Pedro Miguel:</a>  Desenvolvimento e atualização dos metódos GET, POST, PUT e DELETE, mais a atualização dos elementos projetos para associar mais de uma equipe, e pessoas para associar a mais de uma tarefa.</div> 
 <div>-<a href="https://github.com/dayannebugarim"> Dayanne Bugarim:</a> Atualização dos metódos GET, POST, PUT e DELETE</div>
 
 
