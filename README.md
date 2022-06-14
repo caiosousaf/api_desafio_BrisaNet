@@ -6,7 +6,7 @@ da equipe podem se atribuir.
 ## Detalhes
 
 - Utilizando Go e gin
-- Disponível em(HEROKU): https://api-desafio-brisa.herokuapp.com
+- Disponível em(HEROKU): https://api-desafio-brisa1.herokuapp.com/
 - Swagger: http://localhost:8080/swagger/index.html (ainda não finalizado)
 - Frontend não implementado nessa primeira etapa
 <div style="display: inline_block"><br>
