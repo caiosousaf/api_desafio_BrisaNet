@@ -3,7 +3,7 @@ package main
 import (
 	docs "TESTE/docs"
 	"net/http"
-	//"os"
+	"os"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -136,9 +136,9 @@ func main() {
 	router.DELETE("/pessoas/:id", deletePessoaById)
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-	//port := os.Getenv("PORT")
-	//router.Run(":"+port)
-	router.Run()
+	port := os.Getenv("PORT")
+	router.Run(":"+port)
+	//router.Run()
 	//https://api-desafio-brisa1.herokuapp.com/swagger/index.html#/
 }
 
