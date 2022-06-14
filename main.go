@@ -11,11 +11,12 @@ import (
 
 // projeto represents data about a record projeto.
 type projeto struct {
-	ID_Projeto  string `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"Description"`
-	IDequipe    string `json:"equipe"`
+    ID_Projeto     string  `json:"id"`
+    Title  string  `json:"title"`
+    Description string  `json:"Description"`
+    IDequipe []string `json:"equipe"`
 }
+
 
 type pessoa struct {
 	ID_Pessoa string `json:"id"`
@@ -41,9 +42,9 @@ type tarefa struct {
 
 // projetos slice to seed record projeto data.
 var projetos = []projeto{
-	{ID_Projeto: "1", Title: "Central de Relacionamento", Description: "Sugestões", IDequipe: "1", },
-	{ID_Projeto: "2", Title: "Jeru", Description: "talvez de certo", IDequipe: "2"},
-	{ID_Projeto: "3", Title: "Sarah Vaughan and Clifford Brown", Description: "talvez de certo", IDequipe: "3"},
+    {ID_Projeto: "1", Title: "Central de Relacionamento", Description: "Sugestões", IDequipe: []string{"1", "3"}},
+    {ID_Projeto: "2", Title: "Jeru", Description: "talvez de certo", IDequipe: []string{"1", "3"}},
+    {ID_Projeto: "3", Title: "Sarah Vaughan and Clifford Brown", Description: "talvez de certo", IDequipe: []string{"1", "3"}},
 }
 
 var pessoas = []pessoa{
@@ -66,9 +67,36 @@ var tarefas = []tarefa{
 	{ID_Tarefa: "5", Nome: "Teste", Description: "Apenas Teste", ID_Project: "1", ID_Equipe: "", Tempo: ""},
 }
 
+var menu= []string{
+    "Bem vindo!", 
+    "Aqui estão todas as rotas disponíveis:",
+    "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=",
+    "                                      ",
+    "-=-=   PROJETOS   =-=-",
+    "                                      ",
+    "GET:","/projetos","/projetos/:id/tarefas/projetos/:id","/projetos/equipes/:id","/projetos/equipes/:id/members","/projetos/:id/equipes","POST:","/projetos","./projetos/:id/tarefa","PUT:","/projetos/:id","DELETE:","/projetos/:id",
+    "                                      ", "------------------------------------","                                      ",
+    "-=-=   EQUIPES   =-=-",
+    "                                      ", 
+    "GET:","/equipes","/equipes/:id","/equipes/member/:id","POST:","/equipes","PUT:","/equipes/:id","DELETE:","/equipes/:id",
+    "                                      ","------------------------------------","                                      ",
+    "-=-=   MEMBROS   =-=-",
+    "                                      ",
+    "GET:","/pessoas","/pessoas/:id","/pessoas/:id/tarefas","POST:","/pessoas","PUT:","/pessoas/:id","DELETE:","/pessoas/:id",
+    "                                      ", "------------------------------------","                                      ",
+    "-=-=   TAREFAS   =-=-",
+    "                                      ",
+    "GET:","/tarefas","/tarefas/:id","/tarefas/:id/pessoas","POST:","/tarefas","PUT:","/tarefas/:id","DELETE:","/tarefas/:id",
+    "                                      ",
+    "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=",
+}
+
 func main() {
 	router := gin.Default()
 	docs.SwaggerInfo.BasePath = "/"
+
+	router.GET("", gettelainicial)
+
 	v1 := router.Group("/")
 	{
 		eg := v1.Group("/projetos")
@@ -82,6 +110,7 @@ func main() {
 			eg.GET("/equipes/:id", getEquipeByID)
 			eg.GET("/equipes/:id/members", getMembersInEquipeByID)
 			eg.POST("/:id/tarefas", postTarefaProjeto)
+			eg.GET("/:id/equipes", getEquipeByProjetobyID)
 
 		}
 	}
@@ -121,6 +150,11 @@ func main() {
 // @Produce json
 // @Success 200 {array} projeto
 // @Router /projetos/ [get]
+
+func gettelainicial(c *gin.Context){
+    c.IndentedJSON(http.StatusOK, menu)
+}
+
 func getprojetos(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, projetos)
 }
@@ -200,6 +234,23 @@ func editProjetoById(c *gin.Context) {
 			return
 		}
 	}
+}
+
+func getEquipeByProjetobyID(c *gin.Context){    
+    id := c.Param("id")
+    for _, a := range projetos {
+        if a.ID_Projeto == id {
+            c.IndentedJSON(http.StatusOK, a)
+            for _, d := range equipes{
+                for _, b:= range a.IDequipe{
+                    if d.ID_Equipe == b{
+                        c.IndentedJSON(http.StatusOK, d)
+                    }
+                }
+            }
+            return
+        }
+    }
 }
 
 func postpessoas(c *gin.Context) {
