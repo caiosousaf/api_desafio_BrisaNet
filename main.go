@@ -104,37 +104,36 @@ func main() {
 			eg.GET("/", getprojetos)
 			eg.GET("/:id", getprojetoByID)
 			eg.GET("/:id/tarefas", getTarefasByProject)
-			eg.POST("/", postprojetos)
-			eg.PUT("/:id", editProjetoById)
-			eg.DELETE("/:id", deleteProjetoById)
+			eg.GET("/:id/equipes", getEquipeByProjetobyID)
 			eg.GET("/equipes/:id", getEquipeByID)
 			eg.GET("/equipes/:id/members", getMembersInEquipeByID)
+			eg.POST("/", postprojetos)
 			eg.POST("/:id/tarefas", postTarefaProjeto)
-			eg.GET("/:id/equipes", getEquipeByProjetobyID)
-
+			eg.PUT("/:id", editProjetoById)
+			eg.DELETE("/:id", deleteProjetoById)
 		}
 	}
 
 	router.GET("/tarefas", getTarefas)
 	router.GET("/tarefas/:id", getTarefaByID)
+	router.GET("/tarefas/:id/pessoas", getTarefaByPessoa)
 	router.POST("/tarefas", postTarefas)
 	router.PUT("/tarefas/:id", editTarefaById)
 	router.DELETE("/tarefas/:id", deleteTarefaById)
-	router.GET("/tarefas/:id/pessoas", getTarefaByPessoa)
 
 	router.GET("/equipes", getEquipes)
 	router.GET("/equipes/:id", getEquipeByID)
 	router.GET("/equipes/member/:id", getMemberByID)
 	router.POST("/equipes", postEquipes)
-	router.DELETE("/equipes/:id", deleteEquipeById)
 	router.PUT("/equipes/:id", updateEquipeById)
+	router.DELETE("/equipes/:id", deleteEquipeById)
 
 	router.GET("/pessoas", getPessoas)
 	router.GET("/pessoas/:id", getpessoaByID)
-	router.POST("/pessoas", postpessoas)
-	router.DELETE("/pessoas/:id", deletePessoaById)
-	router.PUT("/pessoas/:id", updatePessoaById)
 	router.GET("/pessoas/:id/tarefas", getPessoaByIdTarefas)
+	router.POST("/pessoas", postpessoas)
+	router.PUT("/pessoas/:id", updatePessoaById)
+	router.DELETE("/pessoas/:id", deletePessoaById)
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	//port := os.Getenv("PORT")
@@ -143,6 +142,14 @@ func main() {
 	//https://api-desafio-brisa1.herokuapp.com/swagger/index.html#/
 }
 
+// HOME SCREEN FUNCTION THE HEROKU
+
+func gettelainicial(c *gin.Context){
+    c.IndentedJSON(http.StatusOK, menu)
+}
+
+// FUNCTION PROJECTS
+
 // @BasePath /
 
 // Get Projects
@@ -150,49 +157,9 @@ func main() {
 // @Produce json
 // @Success 200 {array} projeto
 // @Router /projetos/ [get]
-
-func gettelainicial(c *gin.Context){
-    c.IndentedJSON(http.StatusOK, menu)
-}
-
 func getprojetos(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, projetos)
 }
-
-func getPessoas(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, pessoas)
-}
-
-func getEquipes(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, equipes)
-}
-
-func getTarefas(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, tarefas)
-}
-
-// @BasePath /
-// Post New Project
-// @Summary Post New Project
-// @Param		id	path			string true "Projeto ID"
-// @Param		title path			string true "Projeto Title"
-// @Param		Description path 	string true "Projeto Description"
-// @Param		equipe path 		string true "Projeto equipe"
-// @Produce json
-// @Success 200 {object} projeto
-// @Router /projetos/ [post]
-func postprojetos(c *gin.Context) {
-	var newprojeto projeto
-
-	if err := c.BindJSON(&newprojeto); err != nil {
-		return
-	}
-
-	projetos = append(projetos, newprojeto)
-	c.IndentedJSON(http.StatusCreated, newprojeto)
-}
-
-
 
 // @BasePath /
 // Get projeto By ID
@@ -212,27 +179,19 @@ func getprojetoByID(c *gin.Context) {
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "projeto not found"})
 }
 
-
-// Delete a project from the list of projects by ID
-func deleteProjetoById(c *gin.Context) {
+func getTarefasByProject(c *gin.Context) {
 	id := c.Param("id")
-	for i, a := range projetos {
-		if a.ID_Projeto == id {
-			projetos = append(projetos[:i], projetos[i+1:]...)
-			return
+	count := 0
+	for _, a := range tarefas {
+		if a.ID_Project == id {
+			c.IndentedJSON(http.StatusOK, a)
+			count += 1
 		}
 	}
-}
-
-// Edit a project from the project list by ID
-func editProjetoById(c *gin.Context) {
-	id := c.Param("id")
-	for i := range projetos {
-		if projetos[i].ID_Projeto == id {
-			c.BindJSON(&projetos[i])
-			c.IndentedJSON(http.StatusOK, projetos[i])
-			return
-		}
+	if count > 0 {
+		return
+	} else {
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
 	}
 }
 
@@ -253,131 +212,95 @@ func getEquipeByProjetobyID(c *gin.Context){
     }
 }
 
-func postpessoas(c *gin.Context) {
-	var newpessoa pessoa
-
-	// Call BindJSON to bind the received JSON to
-	// newpessoa.
-	if err := c.BindJSON(&newpessoa); err != nil {
+// @BasePath /
+// Post New Project
+// @Summary Post New Project
+// @Param		id	path			string true "Projeto ID"
+// @Param		title path			string true "Projeto Title"
+// @Param		Description path 	string true "Projeto Description"
+// @Param		equipe path 		string true "Projeto equipe"
+// @Produce json
+// @Success 200 {object} projeto
+// @Router /projetos/ [post]
+func postprojetos(c *gin.Context) {
+	var newprojeto projeto
+	
+	if err := c.BindJSON(&newprojeto); err != nil {
 		return
 	}
-
-	// Add the new pessoa to the slice.
-	pessoas = append(pessoas, newpessoa)
-	c.IndentedJSON(http.StatusCreated, newpessoa)
+	
+	projetos = append(projetos, newprojeto)
+	c.IndentedJSON(http.StatusCreated, newprojeto)
 }
 
-func postEquipes(c *gin.Context) {
-	var newequipe equipe
-	// Call BindJSON to bind the received JSON to newpessoa
-	if err := c.BindJSON(&newequipe); err != nil {
-		return
-	}
-	// Add the new pessoa to the slice.
-	equipes = append(equipes, newequipe)
-	c.IndentedJSON(http.StatusCreated, newequipe)
-}
+// function publish a task in a given project
 
-func deleteEquipeById(c *gin.Context) {
+func postTarefaProjeto(c *gin.Context) {
 	id := c.Param("id")
-	for i, a := range equipes {
-		if a.ID_Equipe == id {
-			equipes = append(equipes[:i], equipes[i+1:]...)
-			return
-		}
-	}
-}
+	count := 0
+	for _, a := range projetos {
+		if a.ID_Projeto == id {
+			var newtarefa tarefa
+			// Call BindJSON to bind the received JSON to new tarefa
 
-func updateEquipeById(c *gin.Context) {
-	id := c.Param("id")
-	for i := range equipes {
-		if equipes[i].ID_Equipe == id {
-			c.BindJSON(&equipes[i])
-			c.IndentedJSON(http.StatusOK, equipes[i])
-			return
-		}
-	}
-}
-
-func getpessoaByID(c *gin.Context) {
-	id := c.Param("id")
-
-	/* Loop through the list of pessoas, looking for
-	   an pessoa whose ID value matches the parameter.*/
-	for _, a := range pessoas {
-		if a.ID_Pessoa == id {
-			c.IndentedJSON(http.StatusOK, a)
-			return
-		}
-	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
-}
-
-func getMemberByID(c *gin.Context) {
-	id := c.Param("id")
-
-	/* Loop through the list of pessoas, looking for
-	   an pessoa whose ID value matches the parameter.*/
-	for _, a := range pessoas {
-		if a.ID_Pessoa == id {
-			c.IndentedJSON(http.StatusOK, a)
-			return
-		}
-	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Member not found"})
-}
-
-func getEquipeByID(c *gin.Context) {
-	id := c.Param("id")
-	for _, a := range equipes {
-		if a.ID_Equipe == id {
-			c.IndentedJSON(http.StatusOK, a)
-			return
-		}
-	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Equipe not found"})
-}
-
-// shows the members of a team by id on the screen
-func getMembersInEquipeByID(c *gin.Context) {
-	id := c.Param("id")
-	for _, a := range equipes {
-		if a.ID_Equipe == id {
-			for _, b := range pessoas {
-				if b.ID_Equipe == a.ID_Equipe {
-					c.IndentedJSON(http.StatusOK, b)
-				}
+			if err := c.BindJSON(&newtarefa); err != nil {
+				return
 			}
+
+			// Add the new Tarefa to the slice by Project.
+			tarefas = append(tarefas, newtarefa)
+			c.IndentedJSON(http.StatusCreated, newtarefa)
 			return
 		}
 	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "equipe not found"})
+	if count > 0 {
+		return
+	} else {
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "projeto not found"})
+	}
 }
 
-// Delete a person from the list of people by Id
-func deletePessoaById(c *gin.Context) {
+// Edit a project from the project list by ID
+func editProjetoById(c *gin.Context) {
 	id := c.Param("id")
-	for i, a := range pessoas {
-		if a.ID_Pessoa == id {
-			pessoas = append(pessoas[:i], pessoas[i+1:]...)
+	for i := range projetos {
+		if projetos[i].ID_Projeto == id {
+			c.BindJSON(&projetos[i])
+			c.IndentedJSON(http.StatusOK, projetos[i])
 			return
 		}
 	}
 }
 
-// edit a person from a list of people via id
-func updatePessoaById(c *gin.Context) {
+// Delete a project from the list of projects by ID
+func deleteProjetoById(c *gin.Context) {
 	id := c.Param("id")
-	for i := range pessoas {
-		if pessoas[i].ID_Pessoa == id {
-			c.BindJSON(&pessoas[i])
-			c.IndentedJSON(http.StatusOK, pessoas[i])
+	for i, a := range projetos {
+		if a.ID_Projeto == id {
+			projetos = append(projetos[:i], projetos[i+1:]...)
 			return
 		}
 	}
 }
 
-func getPessoaByIdTarefas(c *gin.Context){
+// FUNCTION TASKS
+
+func getTarefas(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, tarefas)
+}
+
+func getTarefaByID(c *gin.Context) {
+	id := c.Param("id")
+	for _, a := range tarefas {
+		if a.ID_Tarefa == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Tarefa not found"})
+}
+
+func getTarefaByPessoa(c *gin.Context){
     id := c.Param("id")
     count := 0
     for _, a := range pessoas {
@@ -392,25 +315,19 @@ func getPessoaByIdTarefas(c *gin.Context){
                     }
                 }
             }
+            if(outrocont > 0){
+                return
+            } else{
+                c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+            }
             count+=1
         }
     }
     if(count > 0){
 		return
 	} else{
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
 	}
-}
-
-func getTarefaByID(c *gin.Context) {
-	id := c.Param("id")
-	for _, a := range tarefas {
-		if a.ID_Tarefa == id {
-			c.IndentedJSON(http.StatusOK, a)
-			return
-		}
-	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Tarefa not found"})
 }
 
 func postTarefas(c *gin.Context) {
@@ -450,7 +367,108 @@ func deleteTarefaById(c *gin.Context) {
 	}
 }
 
-func getTarefaByPessoa(c *gin.Context){
+
+// FUNCTION TEAM
+
+func getEquipes(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, equipes)
+}
+
+// shows the members of a team by id on the screen
+func getMembersInEquipeByID(c *gin.Context) {
+	id := c.Param("id")
+	for _, a := range equipes {
+		if a.ID_Equipe == id {
+			for _, b := range pessoas {
+				if b.ID_Equipe == a.ID_Equipe {
+					c.IndentedJSON(http.StatusOK, b)
+				}
+			}
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "equipe not found"})
+}
+
+func getEquipeByID(c *gin.Context) {
+	id := c.Param("id")
+	for _, a := range equipes {
+		if a.ID_Equipe == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Equipe not found"})
+}
+
+func getMemberByID(c *gin.Context) {
+	id := c.Param("id")
+
+	/* Loop through the list of pessoas, looking for
+	   an pessoa whose ID value matches the parameter.*/
+	for _, a := range pessoas {
+		if a.ID_Pessoa == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Member not found"})
+}
+
+func postEquipes(c *gin.Context) {
+	var newequipe equipe
+	// Call BindJSON to bind the received JSON to newpessoa
+	if err := c.BindJSON(&newequipe); err != nil {
+		return
+	}
+	// Add the new pessoa to the slice.
+	equipes = append(equipes, newequipe)
+	c.IndentedJSON(http.StatusCreated, newequipe)
+}
+
+func updateEquipeById(c *gin.Context) {
+	id := c.Param("id")
+	for i := range equipes {
+		if equipes[i].ID_Equipe == id {
+			c.BindJSON(&equipes[i])
+			c.IndentedJSON(http.StatusOK, equipes[i])
+			return
+		}
+	}
+}
+
+func deleteEquipeById(c *gin.Context) {
+	id := c.Param("id")
+	for i, a := range equipes {
+		if a.ID_Equipe == id {
+			equipes = append(equipes[:i], equipes[i+1:]...)
+			return
+		}
+	}
+}
+
+
+// FUNCTION MEMBERS
+
+func getPessoas(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, pessoas)
+}
+
+func getpessoaByID(c *gin.Context) {
+	id := c.Param("id")
+
+	/* Loop through the list of pessoas, looking for
+	   an pessoa whose ID value matches the parameter.*/
+	for _, a := range pessoas {
+		if a.ID_Pessoa == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
+}
+
+func getPessoaByIdTarefas(c *gin.Context){
     id := c.Param("id")
     count := 0
     for _, a := range pessoas {
@@ -465,61 +483,49 @@ func getTarefaByPessoa(c *gin.Context){
                     }
                 }
             }
-            if(outrocont > 0){
-                return
-            } else{
-                c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
-            }
             count+=1
         }
     }
     if(count > 0){
 		return
 	} else{
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "pessoa not found"})
-	}
-}
-
-
-func getTarefasByProject(c *gin.Context) {
-	id := c.Param("id")
-	count := 0
-	for _, a := range tarefas {
-		if a.ID_Project == id {
-			c.IndentedJSON(http.StatusOK, a)
-			count += 1
-		}
-	}
-	if count > 0 {
-		return
-	} else {
 		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "tarefa not found"})
 	}
 }
 
-// function publish a task in a given project
+func postpessoas(c *gin.Context) {
+	var newpessoa pessoa
 
-func postTarefaProjeto(c *gin.Context) {
+	// Call BindJSON to bind the received JSON to
+	// newpessoa.
+	if err := c.BindJSON(&newpessoa); err != nil {
+		return
+	}
+
+	// Add the new pessoa to the slice.
+	pessoas = append(pessoas, newpessoa)
+	c.IndentedJSON(http.StatusCreated, newpessoa)
+}
+
+// edit a person from a list of people via id
+func updatePessoaById(c *gin.Context) {
 	id := c.Param("id")
-	count := 0
-	for _, a := range projetos {
-		if a.ID_Projeto == id {
-			var newtarefa tarefa
-			// Call BindJSON to bind the received JSON to new tarefa
-
-			if err := c.BindJSON(&newtarefa); err != nil {
-				return
-			}
-
-			// Add the new Tarefa to the slice by Project.
-			tarefas = append(tarefas, newtarefa)
-			c.IndentedJSON(http.StatusCreated, newtarefa)
+	for i := range pessoas {
+		if pessoas[i].ID_Pessoa == id {
+			c.BindJSON(&pessoas[i])
+			c.IndentedJSON(http.StatusOK, pessoas[i])
 			return
 		}
 	}
-	if count > 0 {
-		return
-	} else {
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "projeto not found"})
+}
+
+// Delete a person from the list of people by Id
+func deletePessoaById(c *gin.Context) {
+	id := c.Param("id")
+	for i, a := range pessoas {
+		if a.ID_Pessoa == id {
+			pessoas = append(pessoas[:i], pessoas[i+1:]...)
+			return
+		}
 	}
 }
