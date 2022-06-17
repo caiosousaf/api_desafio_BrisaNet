@@ -1,10 +1,13 @@
 package main
 
 import (
-    "github.com/gin-gonic/gin"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/books"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/common/db"
-    "github.com/spf13/viper"
+	"github.com/caiosousaf/go-gin-api-medium/pkg/people"
+    "github.com/caiosousaf/go-gin-api-medium/pkg/teams"
+    "github.com/caiosousaf/go-gin-api-medium/pkg/projects"
+	
+	"github.com/caiosousaf/go-gin-api-medium/pkg/common/db"
+	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
 )
 
 func main() {
@@ -17,7 +20,10 @@ func main() {
     r := gin.Default()
     h := db.Init(dbUrl)
 
-    books.RegisterRoutes(r, h)
+    
+    people.RegisterRoutes(r, h)
+    projects.RegisterRoutes(r, h)
+    teams.RegisterRoutes(r, h)
     // register more routes here
 
     r.Run(port)

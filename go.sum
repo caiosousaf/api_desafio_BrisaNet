@@ -48,6 +48,8 @@ github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578/go.mod h1:uGdko
 github.com/agiledragon/gomonkey/v2 v2.3.1/go.mod h1:ap1AmDzcVOAz1YpeJ3TCzIgstoaWLA6jbbgxfB4w2iY=
 github.com/caiosousaf/go-gin-api-medium v0.0.0-20220615133154-e62cc2810a28 h1:vaVqILW2iC8d7+VaPAUXX56ccK/ywUsitEQkk7EH5fk=
 github.com/caiosousaf/go-gin-api-medium v0.0.0-20220615133154-e62cc2810a28/go.mod h1:rm/W7l8PX+IVaBP/285oNbM9F3lhiO9FbHj8VJXIUf8=
+github.com/caiosousaf/go-gin-api-medium v0.0.0-20220617120622-c7f711ed005f h1:cfp14JYPBCXj6vtWVdOlt4WcM6inYkFMAbq01tZRwhE=
+github.com/caiosousaf/go-gin-api-medium v0.0.0-20220617120622-c7f711ed005f/go.mod h1:rm/W7l8PX+IVaBP/285oNbM9F3lhiO9FbHj8VJXIUf8=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
 github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5PlCu98SY8svDHJxuZscDgtXS6KTTbou5AhLI=
