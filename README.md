@@ -24,7 +24,7 @@ da equipe podem se atribuir.
 
 ## Andamento do projeto
 
-| Funcionalidade        | Estado |
+| Funcionalidade         | Estado |
 | ------------- |:-------------:|
 | Manter equipe      | ✔️❤️ |
 | Manter projeto      | ✔️❤️ |
