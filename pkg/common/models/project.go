@@ -1,9 +1,11 @@
 package models
 
-import "gorm.io/gorm"
+import _"gorm.io/gorm"
 
 type Project struct {
-    gorm.Model
+    ID_project   string `gorm:"primary_key" json:"id_project"`
     Title  string  `json:"title"`
     Description string  `json:"Description"`
+    ID_team  uint `gorm:"foreignkey" json:"id_team"`
+    ID_task uint `gorm:"foreignkey" json:"id_task"`
 }
