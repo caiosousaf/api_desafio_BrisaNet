@@ -8,7 +8,6 @@ da equipe podem se atribuir.
 - Utilizando Go e gin, Angular e PostgreSQL
 - Disponível em(HEROKU): 
 - Swagger: (ainda não finalizado)
-- link figma: https://www.figma.com/file/umgm0pl3QD1tlIWNU5UaMW/Untitled?node-id=0%3A1
 <div style="display: inline_block"><br>
 <img align="center" alt="miguel-Golang" height="60" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" />
 <img align="center" alt="miguel-Angular" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"/>
