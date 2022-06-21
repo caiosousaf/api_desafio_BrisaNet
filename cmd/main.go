@@ -25,6 +25,7 @@ func main() {
     people.RegisterRoutes(r, h)
     projects.RegisterRoutes(r, h)
     teams.RegisterRoutes(r, h)
+    tasks.RegisterRoutes(r, h)
     // register more routes here
 
     r.Run(port)
