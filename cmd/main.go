@@ -4,6 +4,7 @@ import (
 	"github.com/caiosousaf/go-gin-api-medium/pkg/people"
     "github.com/caiosousaf/go-gin-api-medium/pkg/teams"
     "github.com/caiosousaf/go-gin-api-medium/pkg/projects"
+    "github.com/caiosousaf/go-gin-api-medium/pkg/tasks"
 	
 	"github.com/caiosousaf/go-gin-api-medium/pkg/common/db"
 	"github.com/gin-gonic/gin"
