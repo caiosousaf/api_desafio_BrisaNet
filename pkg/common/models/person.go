@@ -7,7 +7,7 @@ type Person struct {
     Name    	string         `json:"name"`
     Profissao 	string         `json:"profissao"`
     TeamID      uint           `json:"teamid"`
-    Team		models.Team    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"team"`
+    Team		Team    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"team"`
     TaskID      uint           `json:"taskid"`
-    Task        models.Task    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"task"`
+    Task        Task    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"task"`
 }

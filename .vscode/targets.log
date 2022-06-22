@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 21 08:27:50 2022
+# Make data base, printed on Wed Jun 22 11:30:39 2022
 
 # Variables
 
@@ -39,15 +39,15 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/brisa/Documentos/GitHub/api_desafio_BrisaNet
+CURDIR := /home/brisa/go-gin-api-medium
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/bin/dbus-update-activation-environment
+_ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:50740
+JOURNAL_STREAM = 8:54576
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -55,19 +55,21 @@ MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/github-desktop.desktop
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # environment
 USERNAME = brisa
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1001/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 2154
+MANAGERPID = 2125
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-36bce84a-923f-40db-9fcb-ad41e71913b1.sock
+LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 VSCODE_CWD = /home/brisa
 # environment
@@ -75,15 +77,17 @@ GOPROXY = https://proxy.golang.org,direct
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /usr/local/go/bin:/home/brisa/.nvm/versions/node/v16.15.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1001/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/brisa-OptiPlex-5090:@/tmp/.ICE-unix/2368,unix/brisa-OptiPlex-5090:/tmp/.ICE-unix/2368
+SESSION_MANAGER = local/brisa-OptiPlex-5090:@/tmp/.ICE-unix/2335,unix/brisa-OptiPlex-5090:/tmp/.ICE-unix/2335
 # environment
 XDG_RUNTIME_DIR = /run/user/1001
 # environment
 GOPATH = /home/brisa/go
+# environment
+NVM_BIN = /home/brisa/.nvm/versions/node/v16.15.1/bin
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -91,15 +95,17 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 6ba95168ef5f46e48b8be6a06635d1c8
+INVOCATION_ID = e8bb0ccef1784ae1a2eaf1c9d45f70e8
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5388
+GIO_LAUNCHED_DESKTOP_FILE_PID = 26359
 # automatic
 %F = $(notdir $%)
 # environment
@@ -107,29 +113,29 @@ DISPLAY = :1
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/brisa/Documentos/GitHub/api_desafio_BrisaNet
+PWD = /home/brisa/go-gin-api-medium
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2333
+SSH_AGENT_PID = 2299
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = Unity
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
 GTK_MODULES = gail:atk-bridge
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+GOMODCACHE = /home/brisa/go/pkg/mod
 # environment
 HOME = /home/brisa
 # environment
-VSCODE_CLI = 1
+LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CODE_CACHE_PATH = /home/brisa/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /home/brisa/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = brisa
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
+NVM_CD_FLAGS = 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -147,9 +153,9 @@ QT_IM_MODULE = ibus
 # environment
 SHLVL = 0
 # environment
-LOCAL_GIT_DIRECTORY = /usr/lib/github-desktop/resources/app/git
-# environment
 GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-8953eb93-175a-481a-ad0b-96078a498d76.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -167,15 +173,17 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = pt_BR:
+LANGUAGE = pt_BR:pt:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1001/vscode-5bff865f-1.68.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1001/vscode-5bff865f-1.67.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/brisa/.nvm
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -209,9 +217,9 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9193
+VSCODE_PID = 26359
 # variable set hash-table stats:
-# Load=100/1024=10%, Rehash=0, Collisions=13/114=11%
+# Load=104/1024=10%, Rehash=0, Collisions=12/118=10%
 
 # Pattern-specific Variable Values
 
@@ -219,9 +227,9 @@ VSCODE_PID = 9193
 
 # Directories
 
-# . (device 66307, inode 14814924): 12 files, no impossibilities.
+# . (device 66307, inode 10488906): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -261,13 +269,13 @@ server:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 134 B / avg = 7 B
-# current buf: size = 8162 B / used = 134 B / count = 18 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 143 B / avg = 7 B
+# current buf: size = 8162 B / used = 143 B / count = 19 / avg = 7 B
 
-# strcache performance: lookups = 23 / hit rate = 21%
+# strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=1/23=4%
-# Finished Make data base on Tue Jun 21 08:27:50 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
+# Finished Make data base on Wed Jun 22 11:30:39 2022
 
  
 Makefile:2: *** missing separator.  Stop.

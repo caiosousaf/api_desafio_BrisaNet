@@ -24,7 +24,7 @@ func (h handler) AddTask(c *gin.Context) {
 	var task models.Task
 	task.Title = body.Title
     task.Description = body.Description
-    task.Project = body.Project
+    task.ProjectID = uint(body.Project.ID)
 
 
 	if result := h.DB.Create(&task); result.Error != nil {

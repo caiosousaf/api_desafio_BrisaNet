@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/brisa/Documentos/GitHub/api_desafio_BrisaNet'
-make: Leaving directory '/home/brisa/Documentos/GitHub/api_desafio_BrisaNet'
+make: Entering directory '/home/brisa/go-gin-api-medium'
+make: Leaving directory '/home/brisa/go-gin-api-medium'
  
 Makefile:2: *** missing separator.  Stop.
 
