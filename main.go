@@ -1,7 +1,7 @@
 package main
 
 import (
-	docs "github.com/caiosousaf/go-gin-api-medium/docs"
+	docs "github.com/caiosousaf/api_desafio_BrisaNet/docs"
 	"net/http"
 	"os"
 	"github.com/gin-gonic/gin"
