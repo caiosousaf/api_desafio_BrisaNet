@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
+	//"github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
 )
 
 type Team struct{
@@ -15,7 +15,7 @@ type Team struct{
 func (h handler) GetTeam(c *gin.Context) {
 	id := c.Param("id")
 
-	var equipe team{}
+	var equipe Team
 
 	if result := h.DB.First(&equipe, id); result.Error != nil {
 		c.AbortWithError(http.StatusNotFound, result.Error)

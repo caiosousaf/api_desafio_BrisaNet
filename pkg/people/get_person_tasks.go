@@ -7,7 +7,6 @@ import (
 )
 
 type Result struct {
-	ID_Pessoa		 uint	`json:"id_pessoa"`
 	Nome_Pessoa 	 string	`json:"nome_pessoa"`
 	Funcao_Pessoa	 string `json:"funcao_pessoa"`
 	Nome_Equipe 	 string	`json:"id_equipe"`
