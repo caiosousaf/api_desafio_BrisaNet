@@ -14,8 +14,9 @@ type EquipeProjetos struct {
 
 func (h handler) GetTeamsProjects (c *gin.Context) {
 	var equipes []EquipeProjetos
+	sql := "select eq.nome_equipe, pr.id_projeto, pr.nome_projeto from equipes as eq inner join projetos as pr on eq.id_equipe = pr.equipe_id"
 
-	if equipes := h.DB.Raw("select eq.nome_equipe, pr.id_projeto, pr.nome_projeto from equipes as eq inner join projetos as pr on eq.id_equipe = pr.equipe_id").Scan(&equipes); equipes.Error != nil {
+	if equipes := h.DB.Raw(sql).Scan(&equipes); equipes.Error != nil {
 		c.AbortWithError(http.StatusNotFound, equipes.Error)
 		return
 	}
@@ -26,8 +27,9 @@ func (h handler) GetTeamsProjects (c *gin.Context) {
 func (h handler) GetTeamProject (c *gin.Context) {
 	var equipe []EquipeProjetos
 	id := c.Param("id")
+	sql := "select eq.nome_equipe, pr.id_projeto, pr.nome_projeto from equipes as eq inner join projetos as pr on eq.id_equipe = pr.equipe_id where eq.id_equipe = ?"
 
-	if equipe := h.DB.Raw("select eq.nome_equipe, pr.id_projeto, pr.nome_projeto from equipes as eq inner join projetos as pr on eq.id_equipe = pr.equipe_id where eq.id_equipe = ?", id).Scan(&equipe); equipe.Error != nil {
+	if equipe := h.DB.Raw(sql, id).Scan(&equipe); equipe.Error != nil {
 		c.AbortWithError(http.StatusNotFound, equipe.Error)
 		return
 	}
