@@ -1,7 +1,7 @@
 package main
 
 import (
-	docs "TESTE/docs"
+	docs "github.com/caiosousaf/go-gin-api-medium/docs"
 	"net/http"
 	"os"
 	"github.com/gin-gonic/gin"
