@@ -1,4 +1,4 @@
-package projects
+package projetos
 
 import (
 	"github.com/gin-gonic/gin"
@@ -11,7 +11,7 @@ type Teams struct {
 	NameTeam 	string 	`json:"nameTeam"`
 }
 
-func (h handler) GetProjectTeam (c * gin.Context){
+func (h handler) GetProjectTeam(c * gin.Context){
 	id := c.Param("id")
 
 	var teams []Teams
