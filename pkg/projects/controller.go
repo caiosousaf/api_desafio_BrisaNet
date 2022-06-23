@@ -1,24 +1,24 @@
-package projects
+package projetos
 
 import (
-    "github.com/gin-gonic/gin"
-
-    "gorm.io/gorm"
+	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 type handler struct {
-    DB *gorm.DB
+	DB *gorm.DB
 }
 
 func RegisterRoutes(r *gin.Engine, db *gorm.DB) {
-    h := &handler{
-        DB: db,
-    }
+	h := &handler{
+		DB: db,
+	}
 
-    routes := r.Group("/projetos")
-    routes.POST("/", h.AddProject)
-    routes.GET("/", h.GetProjects)
-    routes.GET("/:id", h.GetProject)
-    routes.PUT("/:id", h.UpdateProject)
-    routes.DELETE("/:id", h.DeleteProject)
+	routes := r.Group("/projetos")
+	routes.POST("/", h.AddProject)
+	routes.GET("/", h.GetProjects)
+	routes.GET("/:id", h.GetProject)
+	routes.GET("/:id/tasks", h.GetProjectTasks)
+	routes.PUT("/:id", h.UpdateProject)
+	routes.DELETE("/:id", h.DeleteProject)
 }

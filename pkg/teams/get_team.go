@@ -1,21 +1,21 @@
-package teams
+package equipes
 
 import (
-    "net/http"
+	"net/http"
 
-    "github.com/gin-gonic/gin"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
+	"github.com/gin-gonic/gin"
+	"github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
 )
 
 func (h handler) GetTeam(c *gin.Context) {
-    id := c.Param("id")
+	id := c.Param("id")
 
-    var team models.Team
+	var equipe models.Equipe
 
-    if result := h.DB.First(&team, id); result.Error != nil {
-        c.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.First(&equipe, id); result.Error != nil {
+		c.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    c.JSON(http.StatusOK, &team)
+	c.JSON(http.StatusOK, &equipe)
 }

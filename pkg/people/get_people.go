@@ -1,19 +1,39 @@
-package people
+package pessoas
 
 import (
-    "net/http"
+	"net/http"
 
-    "github.com/gin-gonic/gin"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
+	"github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
+	"github.com/gin-gonic/gin"
 )
 
+type GetPessoasRequestBody struct {
+	ID_Pessoa 		uint	`json:"id_pessoa"`
+    Nome_Pessoa		string 	`json:"nome_pessoa"`
+	Funcao_Pessoa	string 	`json:"funcao_pessoa"`
+	EquipeID		int 	`json:"id_equipe"`
+}
+
 func (h handler) GetPeople(c *gin.Context) {
-    var people []models.Person
+	var pessoas []models.Pessoa
 
-    if result := h.DB.Find(&people); result.Error != nil {
-        c.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.Find(&pessoas); result.Error != nil {
+		c.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    c.JSON(http.StatusOK, &people)
+	var exibe []GetPessoasRequestBody
+	p := GetPessoasRequestBody{}
+
+	for _, pe := range pessoas{
+		p.ID_Pessoa = pe.ID_Pessoa
+		p.Nome_Pessoa = pe.Nome_Pessoa
+		p.Funcao_Pessoa = pe.Funcao_Pessoa
+		p.EquipeID = pe.EquipeID
+
+		exibe = append(exibe, p)
+	}
+
+
+	c.JSON(http.StatusOK, &exibe)
 }

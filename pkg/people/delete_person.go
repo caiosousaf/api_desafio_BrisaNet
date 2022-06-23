@@ -1,23 +1,23 @@
-package people
+package pessoas
 
 import (
-    "net/http"
+	"net/http"
 
     "github.com/gin-gonic/gin"
     "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
 )
 
 func (h handler) DeletePerson(c *gin.Context) {
-    id := c.Param("id")
+	id := c.Param("id")
 
-    var person models.Person
+	var pessoa models.Pessoa
 
-    if result := h.DB.First(&person, id); result.Error != nil {
-        c.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.First(&pessoa, id); result.Error != nil {
+		c.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    h.DB.Delete(&person)
+	h.DB.Delete(&pessoa)
 
-    c.Status(http.StatusOK)
+	c.Status(http.StatusOK)
 }

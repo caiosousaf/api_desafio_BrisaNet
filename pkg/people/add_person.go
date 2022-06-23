@@ -1,39 +1,37 @@
-package people
+package pessoas
 
 import (
-    "net/http"
+	"net/http"
 
     "github.com/gin-gonic/gin"
     "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
 )
 
-type AddPersonRequestBody struct {
-    Name_Person    	string     `json:"name_person"`
-    Profissao 	    string     `json:"profissao"`
-    Team		models.Team    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"team"`
-    Task        models.Task    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"task"`
+type AddPessoaRequestBody struct {
+    Nome_Pessoa		string `gorm:"type: varchar(30) not null" json:"nome_pessoa"`
+	Funcao_Pessoa	string `gorm:"type: varchar(15) not null" json:"funcao_pessoa"`
+	Equipe			models.Equipe `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;" json:"equipe"`
 }
 
 func (h handler) AddPerson(c *gin.Context) {
-    body := AddPersonRequestBody{}
+	body := AddPessoaRequestBody{}
 
-    // getting request's body
-    if err := c.BindJSON(&body); err != nil {
-        c.AbortWithError(http.StatusBadRequest, err)
-        return
-    }
+	// getting request's body
+	if err := c.BindJSON(&body); err != nil {
+		c.AbortWithError(http.StatusBadRequest, err)
+		return
+	}
 
-    var person models.Person
+	var pessoa models.Pessoa
 
-    person.Name_Person = body.Name_Person
-    person.Profissao = body.Profissao
-    person.Team = body.Team
-    person.Task = body.Task
+	pessoa.Nome_Pessoa = body.Nome_Pessoa
+	pessoa.Funcao_Pessoa = body.Funcao_Pessoa
+	pessoa.Equipe = body.Equipe
 
-    if result := h.DB.Create(&person); result.Error != nil {
-        c.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.Create(&pessoa); result.Error != nil {
+		c.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    c.JSON(http.StatusCreated, &person)
+	c.JSON(http.StatusCreated, &pessoa)
 }

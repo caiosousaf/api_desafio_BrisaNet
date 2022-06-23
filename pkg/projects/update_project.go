@@ -1,4 +1,4 @@
-package projects
+package projetos
 
 import (
     "net/http"
@@ -7,32 +7,32 @@ import (
     "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
 )
 
-type UpdateProjectRequestBody struct {
-    Title_Project       string  `json:"title_project"`
-    Description_Project string  `json:"description_project"`
+type UpdateProjetoRequestBody struct {
+	Nome_Projeto	string `json:"nome_projeto"`
+	Equipe 			models.Equipe `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;" json:"equipe"`
 }
 
 func (h handler) UpdateProject(c *gin.Context) {
-    id := c.Param("id")
-    body := UpdateProjectRequestBody{}
+	id := c.Param("id")
+	body := UpdateProjetoRequestBody{}
 
-    // getting request's body
-    if err := c.BindJSON(&body); err != nil {
-        c.AbortWithError(http.StatusBadRequest, err)
-        return
-    }
+	// getting request's body
+	if err := c.BindJSON(&body); err != nil {
+		c.AbortWithError(http.StatusBadRequest, err)
+		return
+	}
 
-    var project models.Project
+	var projeto models.Projeto
 
-    if result := h.DB.First(&project, id); result.Error != nil {
-        c.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.First(&projeto, id); result.Error != nil {
+		c.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    project.Title_Project = body.Title_Project
-	project.Description_Project = body.Description_Project
+	projeto.Nome_Projeto = body.Nome_Projeto
+	projeto.Equipe = body.Equipe
 
-    h.DB.Save(&project)
+	h.DB.Save(&projeto)
 
-    c.JSON(http.StatusOK, &project)
+	c.JSON(http.StatusOK, &projeto)
 }

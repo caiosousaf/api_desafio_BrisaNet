@@ -1,4 +1,4 @@
-package people
+package pessoas
 
 import (
     "net/http"
@@ -7,39 +7,34 @@ import (
     "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
 )
 
-type UpdatePersonRequestBody struct {
-	Name_Person    	string     `json:"name_person"`
-    Profissao 	    string     `json:"profissao"`
-    TeamID      uint           `json:"teamid"`
-    Team		models.Team    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"team"`
-    TaskID      uint           `json:"taskid"`
-    Task        models.Task    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"task"`
-
+type UpdatePessoaRequestBody struct {
+	Nome_Pessoa		string `json:"nome_pessoa"`
+	Funcao_Pessoa 		string `json:"funcao_pessoa"`
+	Equipe 		models.Equipe `json:"equipe"`
 }
 
 func (h handler) UpdatePerson(c *gin.Context) {
-    id := c.Param("id")
-    body := UpdatePersonRequestBody{}
+	id := c.Param("id")
+	body := UpdatePessoaRequestBody{}
 
-    // getting request's body
-    if err := c.BindJSON(&body); err != nil {
-        c.AbortWithError(http.StatusBadRequest, err)
-        return
-    }
+	// getting request's body
+	if err := c.BindJSON(&body); err != nil {
+		c.AbortWithError(http.StatusBadRequest, err)
+		return
+	}
 
-    var person models.Person
+	var pessoa models.Pessoa
 
-    if result := h.DB.First(&person, id); result.Error != nil {
-        c.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.First(&pessoa, id); result.Error != nil {
+		c.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    person.Name_Person = body.Name_Person
-    person.Profissao = body.Profissao
-    person.Team = body.Team
-    person.Task = body.Task
+	pessoa.Nome_Pessoa = body.Nome_Pessoa
+	pessoa.Funcao_Pessoa = body.Funcao_Pessoa
+	pessoa.Equipe = body.Equipe
 
-    h.DB.Save(&person)
+	h.DB.Save(&pessoa)
 
-    c.JSON(http.StatusOK, &person)
+	c.JSON(http.StatusOK, &pessoa)
 }

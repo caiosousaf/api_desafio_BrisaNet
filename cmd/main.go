@@ -22,9 +22,9 @@ func main() {
     h := db.Init(dbUrl)
 
     
-    people.RegisterRoutes(r, h)
-    projects.RegisterRoutes(r, h)
-    teams.RegisterRoutes(r, h)
+    pessoas.RegisterRoutes(r, h)
+    projetos.RegisterRoutes(r, h)
+    equipes.RegisterRoutes(r, h)
     tasks.RegisterRoutes(r, h)
     // register more routes here
 
