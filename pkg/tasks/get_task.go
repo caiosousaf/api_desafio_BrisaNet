@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/caiosousaf/api_desafio_Brisa/pkg/common/models"
+	"github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
 )
 
 func (h handler) GetTask(c *gin.Context) {
