@@ -6,9 +6,9 @@ import (
 )
 
 type Membros struct {
-	Nome_Equipe 	string `json:"nome_equipe"`
-	Nome_Pessoa 	string `json:"nome_pessoa"`
-	Funcao_Pessoa 	string `json:"funcao_pessoa"`
+	Nome_Equipe 	string 	`json:"nome_equipe"`
+	Nome_Pessoa 	string 	`json:"nome_pessoa"`
+	Funcao_Pessoa 	string 	`json:"funcao_pessoa"`
 	ID_Equipe		uint	`json:"id_equipe"`
 	ID_Task			uint	`json:"id_task"`
 }
