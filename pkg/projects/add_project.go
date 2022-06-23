@@ -8,8 +8,8 @@ import (
 )
 
 type AddProjectRequestBody struct {
-    Title  string  `json:"title"`
-    Description string  `json:"Description"`
+    Title_Project       string  `json:"title_project"`
+    Description_Project string  `json:"description_project"`
 }
 
 func (h handler) AddProject(c *gin.Context) {
@@ -23,8 +23,8 @@ func (h handler) AddProject(c *gin.Context) {
 
     var project models.Project
 
-    project.Title = body.Title
-    project.Description = body.Description
+    project.Title_Project = body.Title_Project
+    project.Description_Project = body.Description_Project
 
     if result := h.DB.Create(&project); result.Error != nil {
         c.AbortWithError(http.StatusNotFound, result.Error)

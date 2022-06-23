@@ -3,8 +3,8 @@ package models
 import _"gorm.io/gorm"
 
 type Team struct {
-    ID   		uint64 			`gorm:"primary_key" json:"id"`
-	Name      	string 			`json:"name"`
-	ProjectID 	uint64 			`json:"projectid"`
-	Project		Project 	`gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"project"`
+    ID_Team   		uint64 			`gorm:"primary_key" json:"id_team"`
+	Name_Team      	string 			`json:"name_team"`
+	ProjectID 		uint64 			`json:"projectId"`
+	Project			Project 		`gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"project"`
 }

@@ -8,9 +8,9 @@ import (
 )
 
 type AddTaskRequestBody struct {
-    Title      string `json:"title"`
-	Description string  `json:"Description"`
-    Project		models.Project 	`gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"project"`
+    Title_Task          string `json:"title_task"`
+	Description_Task    string  `json:"description_task"`
+    Project		        models.Project 	`gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"project"`
 }
 
 func (h handler) AddTask(c *gin.Context) {
@@ -22,9 +22,10 @@ func (h handler) AddTask(c *gin.Context) {
     }
 	
 	var task models.Task
-	task.Title = body.Title
-    task.Description = body.Description
-    task.ProjectID = uint(body.Project.ID)
+
+	task.Title_Task = body.Title_Task
+    task.Description_Task = body.Description_Task
+    task.Project = body.Project
 
 
 	if result := h.DB.Create(&task); result.Error != nil {

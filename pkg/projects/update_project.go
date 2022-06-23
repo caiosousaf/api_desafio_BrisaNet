@@ -8,8 +8,8 @@ import (
 )
 
 type UpdateProjectRequestBody struct {
-    Title  string  `json:"title"`
-    Description string  `json:"Description"`
+    Title_Project       string  `json:"title_project"`
+    Description_Project string  `json:"description_project"`
 }
 
 func (h handler) UpdateProject(c *gin.Context) {
@@ -29,8 +29,8 @@ func (h handler) UpdateProject(c *gin.Context) {
         return
     }
 
-    project.Title = body.Title
-	project.Description = body.Description
+    project.Title_Project = body.Title_Project
+	project.Description_Project = body.Description_Project
 
     h.DB.Save(&project)
 

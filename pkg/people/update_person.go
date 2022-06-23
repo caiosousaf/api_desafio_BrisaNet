@@ -8,8 +8,8 @@ import (
 )
 
 type UpdatePersonRequestBody struct {
-	Name    	string `json:"name"`
-    Profissao 	string `json:"profissao"`
+	Name_Person    	string     `json:"name_person"`
+    Profissao 	    string     `json:"profissao"`
     TeamID      uint           `json:"teamid"`
     Team		models.Team    `gorm:"constraint:OnUpadate:CASCADE,OnDelete:CASCADE" json:"team"`
     TaskID      uint           `json:"taskid"`
@@ -34,7 +34,7 @@ func (h handler) UpdatePerson(c *gin.Context) {
         return
     }
 
-    person.Name = body.Name
+    person.Name_Person = body.Name_Person
     person.Profissao = body.Profissao
     person.Team = body.Team
     person.Task = body.Task
