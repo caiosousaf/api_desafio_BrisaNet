@@ -1,4 +1,4 @@
-module github.com/caiosousaf/go-gin-api-medium
+module github.com/caiosousaf/api_desafio_BrisaNet
 
 go 1.18
 

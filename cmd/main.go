@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/caiosousaf/go-gin-api-medium/pkg/people"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/teams"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/projects"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/tasks"
+	"github.com/caiosousaf/api_desafio_BrisaNet/pkg/people"
+    "github.com/caiosousaf/api_desafio_BrisaNet/pkg/teams"
+    "github.com/caiosousaf/api_desafio_BrisaNet/pkg/projects"
+    "github.com/caiosousaf/api_desafio_BrisaNet/pkg/tasks"
 	
-	"github.com/caiosousaf/go-gin-api-medium/pkg/common/db"
+	"github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/db"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )

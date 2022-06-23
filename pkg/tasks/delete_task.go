@@ -4,7 +4,7 @@ import (
 	"net/http"
 
     "github.com/gin-gonic/gin"
-    "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
+    "github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
 )
 
 func (h handler) DeleteTask(c *gin.Context) {

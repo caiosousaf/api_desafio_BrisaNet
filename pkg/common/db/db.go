@@ -3,7 +3,7 @@ package db
 import (
     "log"
 
-    "github.com/caiosousaf/go-gin-api-medium/pkg/common/models"
+    "github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
     "gorm.io/driver/postgres"
     "gorm.io/gorm"
 )
