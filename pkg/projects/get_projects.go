@@ -3,12 +3,17 @@ package projetos
 import (
 	"net/http"
 
-	"github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
+	//"github.com/caiosousaf/api_desafio_BrisaNet/pkg/common/models"
 	"github.com/gin-gonic/gin"
 )
+type Projeto struct {
+	ID_Projeto 		uint 	`gorm:"primary_key" json:"id_projeto"`
+	Nome_Projeto 	string 	`gorm:"type: varchar(30) not null" json:"nome_projeto"`
+	EquipeID 		int 	`json:"equipeId"`
+}
 
 func (h handler) GetProjects(c *gin.Context) {
-	var projetos []models.Projeto
+	var projetos []Projeto
 
 	if result := h.DB.Find(&projetos); result.Error != nil {
 		c.AbortWithError(http.StatusNotFound, result.Error)

@@ -8,7 +8,7 @@ Makefile:2: *** missing separator.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 09:18:11 2022
+# Make data base, printed on Thu Jun 23 10:50:08 2022
 
 # Variables
 
@@ -41,7 +41,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/brisa/go-gin-api-medium
+CURDIR := /home/brisa/Documentos/Teste/api_desafio_BrisaNet
 # makefile
 SHELL = /bin/sh
 # environment
@@ -107,7 +107,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4926
+GIO_LAUNCHED_DESKTOP_FILE_PID = 272037
 # automatic
 %F = $(notdir $%)
 # environment
@@ -115,7 +115,7 @@ DISPLAY = :1
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/brisa/go-gin-api-medium
+PWD = /home/brisa/Documentos/Teste/api_desafio_BrisaNet
 # default
 .LOADED := 
 # environment
@@ -157,7 +157,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-dab19097-ecc3-46f4-bddd-0a3a0385e262.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-978639e7-37d8-407b-9036-256031795a31.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -187,7 +187,6 @@ MFLAGS = -pqrR
 # environment
 NVM_DIR = /home/brisa/.nvm
 # automatic
- 
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
@@ -220,7 +219,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4926
+VSCODE_PID = 272037
 # variable set hash-table stats:
 # Load=104/1024=10%, Rehash=0, Collisions=12/118=10%
 
@@ -230,7 +229,7 @@ VSCODE_PID = 4926
 
 # Directories
 
-# . (device 66307, inode 10488906): 13 files, no impossibilities.
+# . (device 66307, inode 10358626): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
 
@@ -278,6 +277,6 @@ server:
 # strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
-# Finished Make data base on Thu Jun 23 09:18:11 2022
+# Finished Make data base on Thu Jun 23 10:50:08 2022
 
  
