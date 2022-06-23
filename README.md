@@ -28,8 +28,11 @@ da equipe podem se atribuir.
 | ------------- |:-------------:|
 | Manter equipe      | ✔️❤️ |
 | Manter projeto      | ✔️❤️ |
-| Associar equipe a projeto | x | 
-| Criar tarefa no projeto | x | 
-| Atribuir tarefa | x | 
+| Associar equipe a projeto | ✔️❤️ | 
+| Criar tarefa no projeto | ✔️❤️ | 
+| Atribuir tarefa | ✔️❤️ | 
+| Utilizar algum SGBD (PostgreSQL/MySQL) | ✔️❤️ |
+| Implementar frontend (Angular/Vue/React) | X |
+| Testes e2e com Cypress | X |
 
 ### APLICAÇÕES
