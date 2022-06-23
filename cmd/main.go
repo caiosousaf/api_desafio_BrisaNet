@@ -1,6 +1,7 @@
 package main
 
 import (
+    "os"
 	"github.com/caiosousaf/api_desafio_BrisaNet/pkg/people"
     "github.com/caiosousaf/api_desafio_BrisaNet/pkg/teams"
     "github.com/caiosousaf/api_desafio_BrisaNet/pkg/projects"
@@ -15,7 +16,7 @@ func main() {
     viper.SetConfigFile("./pkg/common/envs/.env")
     viper.ReadInConfig()
 
-    port := viper.Get("PORT").(string)
+    port := os.Getenv("PORT")
     dbUrl := viper.Get("DB_URL").(string)
 
     r := gin.Default()
@@ -28,5 +29,5 @@ func main() {
     tasks.RegisterRoutes(r, h)
     // register more routes here
 
-    r.Run(port)
+    r.Run(":"+port)
 }
