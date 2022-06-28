@@ -10,7 +10,7 @@ da equipe podem se atribuir.
 - Swagger: (ainda não finalizado)
 <div style="display: inline_block"><br>
 <img align="center" alt="miguel-Golang" height="60" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" />
-<img align="center" alt="miguel-React" height="50" width="60" src="https://pt.m.wikipedia.org/wiki/Ficheiro:React-icon.svg"/>
+<img align="center" alt="miguel-React" height="60" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
 <img align="center" alt="miguel-PostgreSQL" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
           
 </div>
