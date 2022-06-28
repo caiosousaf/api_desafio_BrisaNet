@@ -1,0 +1,36 @@
+import React from 'react';
+import ToggleButton, { ToggleButtonProps } from './ToggleButton';
+import { RsRefForwardingComponent, TypeAttributes } from '../@types/common';
+import { IconProps } from '@rsuite/icons/lib/Icon';
+declare type ValueType = string | number;
+export interface PickerToggleProps extends ToggleButtonProps {
+    value?: ValueType | ValueType[];
+    inputValue?: ValueType | ValueType[];
+    id?: string;
+    hasValue?: boolean;
+    cleanable?: boolean;
+    caret?: boolean;
+    active?: boolean;
+    disabled?: boolean;
+    readOnly?: boolean;
+    plaintext?: boolean;
+    tabIndex?: number;
+    input?: boolean;
+    inputPlaceholder?: string;
+    inputMask?: (string | RegExp)[];
+    onInputChange?: (value: string, event: React.ChangeEvent) => void;
+    onInputPressEnter?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    onInputBlur?: (event: React.FocusEvent<HTMLElement>) => void;
+    onInputFocus?: (event: React.FocusEvent<HTMLElement>) => void;
+    placement?: TypeAttributes.Placement;
+    /**
+     * Custom caret component
+     * @deprecated Use `caretAs` instead
+     */
+    caretComponent?: React.FC<IconProps>;
+    /** Custom caret component */
+    caretAs?: React.ElementType;
+    onClean?: (event: React.MouseEvent) => void;
+}
+declare const PickerToggle: RsRefForwardingComponent<typeof ToggleButton, PickerToggleProps>;
+export default PickerToggle;
