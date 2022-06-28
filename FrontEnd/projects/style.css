@@ -58,17 +58,9 @@ body {
     color: var(--branco);
 }
 
-main {
-    /*border: 1px solid white;*/
-}
-
-/*div.main, .main .row {
-    border: 1px solid lightcyan;
-}*/
-
 .main .card-box {
     background-color: var(--preto-medio);
-    max-width: 23.45%;
+    max-width: 22.67rem;
     height: 350px;
     border-radius: 10px;
     gap: 2rem;
@@ -83,6 +75,7 @@ main {
 
 #main-search {
     background-color: var(--preto-medio);
+    color: var(--branco);
     border: none;
     height: 3rem;
     border-radius: 8px;
@@ -127,6 +120,7 @@ main h1 {
     background-color: transparent;
     border: 1px solid var(--cinza);
     border-radius: 5px;
+    color: var(--branco);
 }
 
 .new-project, .filter {
