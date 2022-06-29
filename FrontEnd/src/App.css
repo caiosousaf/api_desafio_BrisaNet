@@ -28,8 +28,10 @@ body {
 } 
 
 .Header {
-    height: 100vh;
-    background-color: var(--preto);
+    background-color: #191A23;
+    max-width: max-content;
+    height: 98vh;
+    box-shadow: 0 30px 60px rgb(0, 0, 0, 0.3);
 }
 
 .Tittle {
