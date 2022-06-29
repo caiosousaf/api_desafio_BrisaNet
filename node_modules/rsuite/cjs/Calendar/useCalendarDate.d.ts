@@ -1,0 +1,5 @@
+declare const useCalendarDate: (value: Date | null | undefined, defaultDate: Date | undefined) => {
+    calendarDate: Date;
+    setCalendarDate: (date: Date | undefined) => void;
+};
+export default useCalendarDate;

@@ -1,0 +1,11 @@
+import { WithAsProps, RsRefForwardingComponent } from '../@types/common';
+export interface ButtonToolbarProps extends WithAsProps {
+    /**
+     * The ARIA role describing the button toolbar. Generally the default
+     * "toolbar" role is correct. An `aria-label` or `aria-labelledby`
+     * prop is also recommended.
+     */
+    role?: string;
+}
+declare const ButtonToolbar: RsRefForwardingComponent<'div', ButtonToolbarProps>;
+export default ButtonToolbar;

@@ -1,10 +1,11 @@
 import './App.css';
-import ProjectCard from './components/ProjectCard';
+import React from 'react'
+import MainNav from './components/MainNav';
 
 function App() {
   return (
     <div className="App">
-      <ProjectCard />
+      <MainNav />
     </div>
   );
 }
