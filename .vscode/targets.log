@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:2: *** missing separator.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ Makefile:2: *** missing separator.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 08:27:37 2022
+# Make data base, printed on Wed Jun 29 08:02:02 2022
 
 # Variables
 
@@ -49,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_langu
 # environment
 _ = /usr/bin/dbus-update-activation-environment
 # environment
-JOURNAL_STREAM = 8:46865
+JOURNAL_STREAM = 8:41851
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -67,9 +65,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1001/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 2152
+MANAGERPID = 2189
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-ff5c1d60-0187-4420-bf6a-f25a216aad4d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-6f59bd97-0638-46f0-9763-caee5c437b50.sock
 # environment
 VSCODE_CWD = /home/brisa
 # environment
@@ -81,7 +79,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1001/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/brisa-OptiPlex-5090:@/tmp/.ICE-unix/2366,unix/brisa-OptiPlex-5090:/tmp/.ICE-unix/2366
+SESSION_MANAGER = local/brisa-OptiPlex-5090:@/tmp/.ICE-unix/2403,unix/brisa-OptiPlex-5090:/tmp/.ICE-unix/2403
 # environment
 XDG_RUNTIME_DIR = /run/user/1001
 # environment
@@ -93,7 +91,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 52169d93d1104fc8b049f24d02b0fa15
+INVOCATION_ID = 9dcdf186668f4437b3be37dc810b4e0a
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -101,7 +99,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 27597
+GIO_LAUNCHED_DESKTOP_FILE_PID = 8819
 # automatic
 %F = $(notdir $%)
 # environment
@@ -113,7 +111,7 @@ PWD = /home/brisa/Documentos/GitHub/api_desafio_BrisaNet
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2331
+SSH_AGENT_PID = 2368
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -211,7 +209,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 27821
+VSCODE_PID = 9303
 # variable set hash-table stats:
 # Load=100/1024=10%, Rehash=0, Collisions=13/114=11%
 
@@ -221,9 +219,9 @@ VSCODE_PID = 27821
 
 # Directories
 
-# . (device 66307, inode 14945158): 11 files, no impossibilities.
+# . (device 66307, inode 14823758): 13 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -263,12 +261,14 @@ server:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 130 B / avg = 7 B
-# current buf: size = 8162 B / used = 130 B / count = 17 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 161 B / avg = 8 B
+# current buf: size = 8162 B / used = 161 B / count = 19 / avg = 8 B
 
-# strcache performance: lookups = 22 / hit rate = 22%
+# strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=1/22=5%
-# Finished Make data base on Mon Jun 27 08:27:37 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
+# Finished Make data base on Wed Jun 29 08:02:02 2022
 
  
+Makefile:2: *** missing separator.  Stop.
+
