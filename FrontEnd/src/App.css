@@ -34,6 +34,16 @@ body {
     box-shadow: 0 30px 60px rgb(0, 0, 0, 0.3);
 }
 
+.CardContainer {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.CardContainer > * {
+   
+}
+
 .Tittle {
     color: var(--laranja);
 }

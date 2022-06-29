@@ -1,0 +1,30 @@
+.OptionsCol > span {
+    color: var(--cinza);
+}
+
+#txt-show {
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid var(--cinza);
+    border-radius: 5px;
+    color: var(--branco);
+}
+
+.NewBtn, .Filter {
+    background: none;
+    border: none;
+}
+
+#order-select {
+    height: 32px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--cinza);
+    width: 5rem;
+}
+
+.Filter {
+    color: var(--cinza);
+    border: 1px solid var(--cinza) !important;
+    border-radius: 5px;
+}

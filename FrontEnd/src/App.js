@@ -14,14 +14,26 @@ function App() {
           <Col xs={1} md={1} className="Header">
             Header
           </Col>
-          <Col md={{ span: 9, offset: 1 }}>
+          
+          <Col md={{ offset: 1 }}>
             <Row>
-              <Col>
+              <Col sm={12} md={{ span: 2, offset: 0 }}>
                 <h1 className='Tittle'>Projetos</h1>
               </Col>
-              <Col md={{ span: 3, offset: 3 }}>
+              <Col sm={12} md={{ span: 3, offset: 6 }}>
                 <input type="search" name="" id="main-search"/>
               </Col>
+            </Row>
+
+            <Row sm={1} className="CardContainer">
+              <ProjectCard />
+              <ProjectCard />
+              <ProjectCard />
+              <ProjectCard />
+
+              <ProjectCard />
+              <ProjectCard />
+              <ProjectCard />
             </Row>
           </Col>
         </Row>

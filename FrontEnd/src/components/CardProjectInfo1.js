@@ -1,4 +1,4 @@
-//import styles from "./CardProjectInfo1.modules.css"
+//import "./CardProjectInfo1.modules.css"
 
 function CardProjectInfo1({nome, descricao, equipe}) {
 
