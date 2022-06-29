@@ -21,53 +21,21 @@
     box-sizing: border-box;
 }
 
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
+body {
+  font-family: var(--inter);
+  background-color: var(--preto);
+  color: var(--branco);
+} 
+
+.Header {
+    height: 100vh;
+    background-color: var(--preto);
 }
 
-header {
-    background-color: #191A23;
-    max-width: max-content;
-    height: 98vh;
-    box-shadow: 0 30px 60px rgb(0, 0, 0, 0.3);
+.Tittle {
+    color: var(--laranja);
 }
 
-header img {
-    
-    /*border: 1px solid white;*/
-}
-
-.logo {
-    margin-left: 10%;
-}
-
-
-header li {
-    margin: 1rem 0;
-}
-
-header .nav li:hover ::after{
-    content: 'teste';
-}
-
-
-
-.main .card-box {
-    background-color: var(--preto-medio);
-    max-width: 22.67rem;
-    height: 350px;
-    border-radius: 10px;
-    gap: 2rem;
-    box-shadow: 0px 2px 12px 5px rgb(0, 0, 0, 0.08);
-    transition: 0.5s;
-}
-
-.main .card-box:hover {
-    transform: scale(1.03);
-    transition: 0.5s;
-}
 
 #main-search {
     background-color: var(--preto-medio);
@@ -81,61 +49,4 @@ header .nav li:hover ::after{
     background-position: 1rem center;
     background-size: 1rem;
     transition: 0.4s;
-}
-
-#main-search:focus {
-    margin-left: 1%;
-}
-
-main h1 {
-    color: var(--laranja);
-}
-
-.main {
-    gap: 2rem;
-}
-
-.main-header {
-    border-bottom: 0.15px solid #2C2E3B;
-}
-
-.option-col > span {
-    color: var(--cinza);
-}
-
-#txt-show {
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid var(--cinza);
-    border-radius: 5px;
-    color: var(--branco);
-}
-
-.new-project, .filter {
-    background: none;
-    border: none;
-}
-
-#order-select {
-    height: 32px;
-    border-radius: 10px;
-    background-color: transparent;
-    color: var(--cinza);
-    width: 5rem;
-}
-
-.filter {
-    color: var(--cinza);
-    border: 1px solid var(--cinza) !important;
-    border-radius: 5px;
-}
-
-.card-part1 {
-    border-bottom: 0.15px solid #2C2E3B;
-}
-
-.description {
-    /*border: 1px solid black;*/
-    max-height: 120px;
-    font-size: 0.85rem;
 }

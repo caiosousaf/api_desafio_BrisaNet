@@ -1,13 +1,14 @@
 import { Nav } from 'rsuite';
+import { Col, Row } from 'rsuite';
 import React from 'react'
 
-function MainNav(props) {
+function MainNav() {
     const styles = { width: 100 };
 
     const CustomNav = ({ active, onSelect, ...props }) => {
     return (
         <Nav {...props} vertical activeKey={active} onSelect={onSelect} style={styles}>
-        <Nav.Item eventKey="home" icon={<Home />}>
+        <Nav.Item eventKey="home">
             Home
         </Nav.Item>
         <Nav.Item eventKey="news">News</Nav.Item>
