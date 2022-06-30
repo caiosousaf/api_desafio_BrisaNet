@@ -51,10 +51,10 @@ const projetoDT_index = () => {
                                 </div>
 
                                 <div className="row">
-                                    <div className="col-lg-6">
+                                    <div className="col-md-12 col-lg-6">
                                         Gráfico
                                     </div>
-                                    <div className="Resumo col-lg-6">
+                                    <div className="Resumo col-md-12 col-lg-6">
                                         <div className="TotColaboradores row d-flex align-items-center justify-content-center">
                                             <h6 className="col-3 d-flex justify-content-end">11</h6>
                                             <p className="col-5">Total de Colaboradores</p>
