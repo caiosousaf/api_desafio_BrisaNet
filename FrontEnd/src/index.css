@@ -31,18 +31,21 @@ header {
     position: fixed;
     top: 0;
     background-color: #191A23;
-    max-width: 10rem;
     height: 100vh;
     box-shadow: 0 30px 60px rgb(0, 0, 0, 0.3);
 }
 
 .logo {
-    margin-left: 10%;
+    max-width: 2rem;
 }
 
 
 header li {
     margin: 1rem 0;
+}
+
+header li img {
+    max-width: 2rem;
 }
 
 .nav-item:hover {
@@ -85,6 +88,10 @@ body {
     background-repeat: no-repeat;
     background-position: 1rem center;
     background-size: 1rem;
+}
+
+#main-search:focus {
+    background-color: var(--preto-claro);
 }
 
 main h1 {
