@@ -1,9 +1,9 @@
-function menu_index() {
+function Menu_index() {
     return (
-        <>
-            aaaaaaaaaaaaaaaa
-        </>
+        <div>
+            a
+        </div>
     )
 }
 
-export default menu_index;
+export default Menu_index;

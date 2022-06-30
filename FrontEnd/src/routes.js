@@ -1,21 +1,21 @@
 import react from 'react';
 
-import { BrowserRouter, Route, Swicht, } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 
-import menu_index from "/pages/Menu/menu_index";
-import projeto_index from "/pages/Projetos/projeto_index";
-import projetoDT_index from "/pages/projeto_DT/projetoDT_index";
+import Menu_index from ".//pages/Menu/menu_index";
+import Projeto from ".//pages/Projetos/projeto_index";
+import Projeto_DT from ".//pages/Projeto_DT/projetoDT_index";
 
-const Routes = () =>{
+const Rout = () =>{
     return(
         <BrowserRouter>
-            <Swicht>
-                <Route exect path="/" component={menu_index}/>
-                <Route exect path="/projetos" component={projeto_index}/>
-                <Route exect path="/projetos/DT" component={projetoDT_index}/>
-            </Swicht>
+            <Routes>
+                <Route exect path="/" element={<Menu_index />}/>
+                <Route exect path="/projetos" element={<Projeto />}/>
+                <Route exect path="/projetos/DT" element={<Projeto_DT />}/>
+            </Routes>
         </BrowserRouter>
     );
 }
 
-export default Routes;
+export default Rout;

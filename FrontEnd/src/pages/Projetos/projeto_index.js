@@ -2,10 +2,13 @@
 import Card from "../../components/Card"
 import NewProject from '../../assets/icons/new.svg'
 import filter from '../../assets/icons/filter.svg'
+import Sidebar from '../../components/SideBar/SideBar'
+
 
 function projeto_index() {
     return (
-        <>
+        <div>
+            <Sidebar />
             <main className='col-11 offset-1 col-lg-11 offset-lg-1 px-5'>
                 <div className='row mt-5 pb-3 main-header'>
                     <h1 className="col-lg-3 fs-2">Projetos</h1>
@@ -44,7 +47,7 @@ function projeto_index() {
                 </div>
 
             </main>
-        </>
+        </div>
     )
 }
 
