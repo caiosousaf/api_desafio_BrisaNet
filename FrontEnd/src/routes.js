@@ -2,7 +2,9 @@ import react from 'react';
 
 import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 
-import Menu from "./pages/Menu/menuIndex";
+import SideBar from './components/SideBar/SideBar';
+import Home from "./pages/Home/home";
+import ProjetoIndex from ".//pages/Projetos/projeto_index";
 import Projeto from ".//pages/Projetos/projeto_index";
 import Projeto_DT from ".//pages/Projeto_DT/projetoDT_index";
 import Equipes from ".//pages/Equipes/equipe_index"
@@ -16,8 +18,12 @@ import Tarefa_DT from ".//pages/Tarefa_DT/tarefaDT_index"
 const Rout = () =>{
     return(
         <BrowserRouter>
+            <SideBar />
             <Routes>
-                <Route exect path="/" element={<Menu/>}/>
+                <Route exect path="/" element={<Home />}/>
+                <Route exect path="/projetos" element={<ProjetoIndex />}/>
+                <Route exect path="/projetos/DT" element={<Projeto_DT />}/>
+                <Route exect path="/" element={<Home/>}/>
 
                 <Route exect path="/projetos" element={<Projeto />}/>
                 <Route exect path="/projeto/:id" element={<Projeto_DT />}/>
@@ -30,8 +36,6 @@ const Rout = () =>{
 
                 <Route exect path="/tarefas" element={<Tarefas />}/>
                 <Route exect path="/tarefa/:id" element={<Tarefa_DT />}/>
-                
-
             </Routes>
         </BrowserRouter>
     );
