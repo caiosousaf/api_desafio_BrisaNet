@@ -1,9 +1,6 @@
 //import './SideBar.modules.css'
 import { Link } from "react-router-dom";
-import home from '../../assets/icons/home.svg'
-import project from '../../assets/icons/project.svg'
-import team from '../../assets/icons/team.svg'
-import person from '../../assets/icons/person.svg'
+
 
 function SideBar() {
     return(
@@ -13,22 +10,22 @@ function SideBar() {
             <ul className="nav flex-column align-items-center">
                 <li className="nav-item">
                 <Link to="/">
-                    <img src={home}/>
+                    <img src={"../../assets/icons/home.svg"}/>
                 </Link>               
                 </li>
                 <li className="nav-item">
                 <Link to="/projetos">
-                    <img src={project}/>
+                    <img src={'../../assets/icons/project.svg'}/>
                 </Link>  
                 </li>
                 <li className="nav-item">
                 <Link to="/equipes">
-                    <img src={team}/>
+                    <img src={'../../assets/icons/team.svg'}/>
                 </Link>  
                 </li>
                 <li className="nav-item">
                 <Link to="/pessoas">
-                    <img src={person}/>
+                    <img src={'../../assets/icons/person.svg'}/>
                 </Link>  
                 </li>
             </ul>
