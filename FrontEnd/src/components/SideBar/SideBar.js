@@ -9,26 +9,26 @@ function SideBar() {
     return(
         <div>
             <header className="col-1 col-lg-1 d-flex flex-column justify-content-center">
-                <img className="logo mb-5" src={logo}/>
+                <img className="logo mb-5" src={logo} alt=""/>
             <ul className="nav flex-column align-items-center">
                 <li className="nav-item">
                 <Link to="/">
-                    <img src={home}/>
+                    <img src={home} alt=""/>
                 </Link>               
                 </li>
                 <li className="nav-item">
                 <Link to="/projetos">
-                    <img src={project}/>
+                    <img src={project} alt=""/>
                 </Link>  
                 </li>
                 <li className="nav-item">
                 <Link to="/equipes">
-                    <img src={team}/>
+                    <img src={team} alt=""/>
                 </Link>  
                 </li>
                 <li className="nav-item">
                 <Link to="/pessoas">
-                    <img src={person}/>
+                    <img src={person} alt=""/>
                 </Link>  
                 </li>
             </ul>

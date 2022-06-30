@@ -16,7 +16,7 @@ function ProjetoIndex() {
                     </div>
                     <div className="RightOptions col-lg-2 offset-lg-8 mt-sm-2">
                         <button className="new-project me-3">
-                        <img src={NewProject}/>
+                        <img src={NewProject} alt=""/>
                         </button>
                         
                         <select className="ps-1 me-3" name="order-select" id="order-select">
@@ -25,7 +25,7 @@ function ProjetoIndex() {
                         </select>
 
                         <button className="filter px-2 py-1">
-                        <span>Filter</span> <img src={filter}/>
+                        <span>Filter</span> <img src={filter} alt=""/>
                         </button>
                     </div>
                 </div>
