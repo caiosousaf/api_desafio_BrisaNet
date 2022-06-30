@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:2: *** missing separator.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ Makefile:2: *** missing separator.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 30 08:04:53 2022
+# Make data base, printed on Thu Jun 30 11:05:11 2022
 
 # Variables
 
@@ -28,8 +26,6 @@ XDG_SESSION_CLASS = user
 XDG_SESSION_TYPE = x11
 # environment
 VSCODE_LOG_NATIVE = false
-# environment
-NVM_INC = /home/brisa/.nvm/versions/node/v17.3.1/include/node
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -49,7 +45,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/brisa/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /usr/share/code/code
+_ = /usr/bin/dbus-update-activation-environment
 # environment
 JOURNAL_STREAM = 8:58392
 # environment
@@ -59,7 +55,7 @@ MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/github-desktop.desktop
 # environment
 USERNAME = brisa
 # environment
@@ -71,7 +67,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 2156
 # environment
-LESSOPEN = | /usr/bin/lesspipe %s
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-f5fc8c77-9873-4f81-903e-41d842256f68.sock
 # environment
 VSCODE_CWD = /home/brisa
 # environment
@@ -79,7 +75,7 @@ GOPROXY = https://proxy.golang.org,direct
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/brisa/.nvm/versions/node/v17.3.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1001/gnupg/S.gpg-agent:0:1
 # environment
@@ -88,8 +84,6 @@ SESSION_MANAGER = local/brisa-OptiPlex-5090:@/tmp/.ICE-unix/2368,unix/brisa-Opti
 XDG_RUNTIME_DIR = /run/user/1001
 # environment
 GOPATH = /home/brisa/go
-# environment
-NVM_BIN = /home/brisa/.nvm/versions/node/v17.3.1/bin
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -101,13 +95,11 @@ INVOCATION_ID = e2d6c05caacc404b8eeb1afbbee32643
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-LS_COLORS = 
-# environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 8748
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6061
 # automatic
 %F = $(notdir $%)
 # environment
@@ -121,7 +113,7 @@ PWD = /home/brisa/Documentos/GitHub/api_desafio_BrisaNet
 # environment
 SSH_AGENT_PID = 2333
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+ORIGINAL_XDG_CURRENT_DESKTOP = Unity
 # environment
 GTK_MODULES = gail:atk-bridge
 # environment
@@ -129,7 +121,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/brisa
 # environment
-LESSCLOSE = /usr/bin/lesspipe %s %s
+VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = /home/brisa/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
@@ -137,7 +129,7 @@ LOGNAME = brisa
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-NVM_CD_FLAGS = 
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -155,9 +147,9 @@ QT_IM_MODULE = ibus
 # environment
 SHLVL = 0
 # environment
-GNOME_SHELL_SESSION_MODE = ubuntu
+LOCAL_GIT_DIRECTORY = /usr/lib/github-desktop/resources/app/git
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-67fb8bd9-b338-4faa-ba49-33ae809a43d2.sock
+GNOME_SHELL_SESSION_MODE = ubuntu
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -184,8 +176,6 @@ MAKEFLAGS = pqrR
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-NVM_DIR = /home/brisa/.nvm
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -219,9 +209,9 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 8748
+VSCODE_PID = 55920
 # variable set hash-table stats:
-# Load=104/1024=10%, Rehash=0, Collisions=11/118=9%
+# Load=100/1024=10%, Rehash=0, Collisions=13/114=11%
 
 # Pattern-specific Variable Values
 
@@ -277,6 +267,8 @@ server:
 # strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
-# Finished Make data base on Thu Jun 30 08:04:53 2022
+# Finished Make data base on Thu Jun 30 11:05:11 2022
 
  
+Makefile:2: *** missing separator.  Stop.
+
