@@ -81,7 +81,7 @@ body {
     height: 3rem;
     border-radius: 8px;
     padding: 1.5rem 1.5rem 1.5rem 2.7rem;
-    background-image: url('./assets/icons/search.svg');
+    background-image: url('/public/assets/icons/search.svg');
     background-repeat: no-repeat;
     background-position: 1rem center;
     background-size: 1rem;
