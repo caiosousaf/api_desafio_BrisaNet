@@ -1,9 +1,9 @@
-const menu_index = () => {
-    return(
-        <div>
-            Menu
-        </div>
-    );
+function menu_index() {
+    return (
+        <>
+            aaaaaaaaaaaaaaaa
+        </>
+    )
 }
 
 export default menu_index;
