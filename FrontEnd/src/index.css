@@ -164,10 +164,22 @@ main h1 {
     height: 30vh;
 }
 
-.Resumo, .TotColaboradores, .TotTarefas, .TarefasAnd, .TarefasConc {
+.TotColaboradores > h6 {
+    color: var(--laranja);
+}
+
+.TotTarefas {
+    border-right: 1px solid #2C2E3B;
+}
+
+.TotTarefas > h6 {
+    color: var(--azul-claro);
+}
+
+/*.Resumo, .TotColaboradores, .TotTarefas, .TarefasAnd, .TarefasConc {
     border: 1px solid wheat;
 }
 
-.TotColaboradores > * {
+.TotColaboradores > *,  .TarefasAnd > *, .TarefasConc > *{
     border: 1px solid wheat;
-}
+}*/

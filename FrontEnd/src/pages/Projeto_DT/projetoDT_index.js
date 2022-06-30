@@ -55,9 +55,9 @@ const projetoDT_index = () => {
                                         Gráfico
                                     </div>
                                     <div className="Resumo col">
-                                        <div className="TotColaboradores row">
-                                            <h6 className="col d-flex justify-content">11</h6>
-                                            <p className="col">Total de Colaboradores</p>
+                                        <div className="TotColaboradores row d-flex align-items-center justify-content-center">
+                                            <h6 className="col-1 d-flex justify-content">11</h6>
+                                            <p className="col-5">Total de Colaboradores</p>
                                         </div>
                                         <div className="row">
                                             <div className="TotTarefas col d-flex flex-column align-items-center justify-content-center">
@@ -65,13 +65,13 @@ const projetoDT_index = () => {
                                                 <p>Total de Tarefas</p>
                                             </div>
                                             <div className=" col">
-                                                <div className="TarefasAnd row">
-                                                    <h6>12</h6>
-                                                    <p>Tarefa em Andamento</p>
+                                                <div className="TarefasAnd row d-flex align-items-center justify-content-center">
+                                                    <h6 className="col-2">12</h6>
+                                                    <p className="col-7">Tarefa em Andamento</p>
                                                 </div>
-                                                <div className="TarefasConc row">
-                                                    <h6>48</h6>
-                                                    <p>Tarefas Concluídas</p>
+                                                <div className="TarefasConc row d-flex align-items-center justify-content-center">
+                                                    <h6 className="col-2">48</h6>
+                                                    <p className="col-7">Tarefas Concluídas</p>
                                                 </div>
                                             </div>
                                         </div>
