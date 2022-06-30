@@ -163,3 +163,11 @@ main h1 {
 .ProjetoEquipe, .ProjetoTarefas {
     height: 30vh;
 }
+
+.Resumo, .TotColaboradores, .TotTarefas, .TarefasAnd, .TarefasConc {
+    border: 1px solid wheat;
+}
+
+.TotColaboradores > * {
+    border: 1px solid wheat;
+}
