@@ -5,15 +5,16 @@ import project from '../../assets/icons/project.svg'
 import team from '../../assets/icons/team.svg'
 import person from '../../assets/icons/person.svg'
 
-function SideBar() {
+function SideBar({location}) {
     return(
         <div>
             <header className="col-1 col-lg-1 d-flex flex-column justify-content-center">
                 <img className="logo mb-5" src={logo} alt=""/>
             <ul className="nav flex-column align-items-center">
                 <li className="nav-item">
-                <Link to="/">
+                <Link to="/" /*className={location.pathname === '/' ? color : '#F46E27'}*/>
                     <img src={home} alt=""/>
+                    
                 </Link>               
                 </li>
                 <li className="nav-item">

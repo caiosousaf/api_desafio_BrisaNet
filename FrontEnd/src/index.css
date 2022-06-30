@@ -164,8 +164,13 @@ main h1 {
     height: 30vh;
 }
 
+.Resumo p {
+    font-size: 1.1rem;
+}
+
 .TotColaboradores > h6 {
     color: var(--laranja);
+    font-size: 3.5rem;
 }
 
 .TotTarefas {
@@ -174,6 +179,12 @@ main h1 {
 
 .TotTarefas > h6 {
     color: var(--azul-claro);
+    font-size: 3.5rem;
+}
+
+.TarefasAnd > h6, .TarefasConc > h6 {
+    color: var(--cinza);
+    font-size: 2.5rem;
 }
 
 /*.Resumo, .TotColaboradores, .TotTarefas, .TarefasAnd, .TarefasConc {
