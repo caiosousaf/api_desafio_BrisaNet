@@ -57,24 +57,32 @@ const projetoDT_index = () => {
                                     <h6>Progresso</h6>
                                     <CircularProgressWithLabel value="20" />
                                     </div>
-                                    <div className="Resumo col-md-12 col-lg-6">
-                                        <div className="TotColaboradores row d-flex align-items-center justify-content-center">
-                                            <h6 className="col-3 d-flex justify-content-end">11</h6>
-                                            <p className="col-5">Total de Colaboradores</p>
+                                    <div className="Resumo col-md-12 col-lg-12 justify-content-center ">
+                                        <div className="TotColaboradores d-flex align-items-center justify-content-center col-12">
+                                            <h6 >11</h6>
+                                            <strong>
+                                            <p className="ms-4 ">Total de <br/> Equipes</p>    
+                                            </strong>    
                                         </div>
-                                        <div className="row">
-                                            <div className="TotTarefas col d-flex flex-column align-items-center justify-content-center">
+                                        <div className="row col-12">
+                                            <div className="TotTarefas col-6 d-flex flex-column align-items-center justify-content-center">
                                                 <h6 className="col">60</h6>
-                                                <p className="text-center col">Total de Tarefas</p>
+                                                <strong>
+                                                <p className="text-center col">Total de <br/> Projetos</p>
+                                                </strong>
                                             </div>
-                                            <div className="col d-flex flex-column align-items-center justify-content-center">
-                                                <div className="TarefasAnd row d-flex align-items-center justify-content-center">
-                                                    <h6 className="col-4">12</h6>
-                                                    <p className="col-7">Tarefa em Andamento</p>
+                                            <div className="col-6 d-flex flex-column align-items-center justify-content-center">
+                                                <div className="TarefasAnd d-flex align-items-center justify-content-center">
+                                                    <h6 className="col-4 md-5" style={{fontFamily: "'Roboto Mono', monospace"}}>13</h6>
+                                                    <strong>
+                                                    <p className="ms-2">Projetos em Andamento</p>
+                                                    </strong>
                                                 </div>
-                                                <div className="TarefasConc row d-flex align-items-center justify-content-center">
-                                                    <h6 className="col-4">48</h6>
-                                                    <p className="col-7">Tarefas Concluídas</p>
+                                                <div className="TarefasConc d-flex align-items-center justify-content-center">
+                                                    <h6 className="col-4 md-5" style={{fontFamily: "'Roboto Mono', monospace"}}>47</h6>
+                                                    <strong>
+                                                    <p className=" ms-2">Projetos Concluídos</p>
+                                                    </strong>
                                                 </div>
                                             </div>
                                         </div>
@@ -83,14 +91,7 @@ const projetoDT_index = () => {
                             </div>
                         </div>                        
                     </div>
-                <div className="row gap-3">
-                    <div className="CardDT ProjetoEquipe col-5">
-
-                    </div>
-                    <div className="CardDT ProjetoTarefas col-5">
-
-                    </div>
-                </div>
+                       
                 </div>
             </main>
         </>

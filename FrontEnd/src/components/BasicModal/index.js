@@ -25,13 +25,12 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen} className="new-project me-3"><img src={NewProject} alt="" /></Button>
+      <button onClick={handleOpen} className="new-project "><img src={NewProject} alt="" /></button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        aria-describedby="modal-modal-equipe"
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2" className='text-center'>
@@ -52,7 +51,7 @@ export default function BasicModal() {
             color: "#F4F5FA",
             opacity: 0.5
           }} 
-          variant="text" className=''>Cancelar</Button>
+          variant="text" className='' onClick={handleClose}>Cancelar</Button>
           <Button style={{
             color: "#F4F5FA",
             background: "#F46E27"

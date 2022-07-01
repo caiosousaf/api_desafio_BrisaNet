@@ -132,10 +132,6 @@ main h1 {
     border: none;
 }
 
-.textField {
-    
-}
-
 #order-select {
     height: 32px;
     border-radius: 10px;
@@ -152,8 +148,8 @@ main h1 {
 
 .Card {
     background-color: var(--preto-medio);
-    max-width: 22.67rem;
-    min-width: 18.27rem;
+    max-width: 350px;
+    min-width: 350px;
     height: 350px;
     border-radius: 10px;
     gap: 2rem;

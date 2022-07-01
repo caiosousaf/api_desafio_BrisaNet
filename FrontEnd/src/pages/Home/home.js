@@ -1,6 +1,6 @@
 import Sidebar from "../../components/SideBar/SideBar";
 import Card from "../../components/Card";
-import BasicModal from '../../components/NewProject'
+import BasicModal from '../../components/BasicModal'
 
 function Menu_index() {
   return (
