@@ -85,18 +85,18 @@ function Menu_index() {
           </div>
         </div>
 
-        <div className="CardBaixoHome pt-1">
+        <div className="CardBaixoHome pt-1 ps-2 pe-2">
           <div className="LeftOptions col-lg-2 mt-sm-2">
             <span className="me-2 ms-4 mt-3">Projetos</span>
           </div>
           <table class="table table-hover" style={{color:'white'}}>
           <thead>
             <tr className="LeftOptions">
-              <th scope="col">#</th>
+              <th scope="col" style={{width:'10%', marginBottom:'40px'}}>#</th>
               <th scope="col" style={{width:'20%'}}>Titulo</th>
-              <th scope="col">Progresso</th>
-              <th scope="col">Status</th>
-              <th scope="col"></th>
+              <th scope="col" style={{width:'40%'}}>Progresso</th>
+              <th scope="col" style={{width:'20%'}}>Status</th>
+              <th scope="col" style={{width:'10%'}}></th>
             </tr>
           </thead>
           <tbody>
