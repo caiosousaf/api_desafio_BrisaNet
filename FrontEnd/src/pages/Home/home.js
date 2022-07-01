@@ -95,20 +95,17 @@ function Menu_index() {
             </div>
             <div className=" mt-4">
                 <div className="d-flex justify-content-around">
-                    <div>
-                        id
+                    <div className="LeftOptions">
+                      <span className="me-2">ID</span>
                     </div>
-                    
-                    <div>
-                        Titulo
+                    <div className="LeftOptions">
+                      <span className="me-2">Titulo</span>
                     </div>
-
-                    <div>
-                        barra progresso
+                    <div className="LeftOptions col-6 ">
+                      <span className="justify-content-center">Progresso</span>
                     </div>
-
-                    <div>
-                        Status
+                    <div className="LeftOptions">
+                      <span className="me-2">Status</span>
                     </div>
                 </div>
                 <div className="linha"></div>
@@ -119,7 +116,7 @@ function Menu_index() {
                     <div className="">
                         projeto API
                     </div>
-                    <div className="">
+                    <div className="col-6">
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                         </div>
@@ -136,7 +133,7 @@ function Menu_index() {
                     <div className="">
                         projeto API-2
                     </div>
-                    <div className="">
+                    <div className="col-6">
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                         </div>
@@ -153,7 +150,7 @@ function Menu_index() {
                     <div className="">
                         projeto API
                     </div>
-                    <div className="">
+                    <div className="col-6">
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                         </div>
