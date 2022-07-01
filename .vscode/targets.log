@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul  1 09:20:50 2022
+# Make data base, printed on Fri Jul  1 09:31:30 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 2121
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-b4219026-b3a6-47d4-99f9-eb943663b6a3.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-1e7cd960-741d-438e-afbf-25d69fb8c50d.sock
 # environment
 VSCODE_CWD = /home/brisa
 # environment
@@ -183,8 +183,6 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -211,9 +209,9 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 8475
+VSCODE_PID = 15833
 # variable set hash-table stats:
-# Load=101/1024=10%, Rehash=0, Collisions=13/115=11%
+# Load=100/1024=10%, Rehash=0, Collisions=13/114=11%
 
 # Pattern-specific Variable Values
 
@@ -221,7 +219,7 @@ VSCODE_PID = 8475
 
 # Directories
 
-# . (device 66307, inode 14811544): 13 files, no impossibilities.
+# . (device 66307, inode 14826638): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
 
@@ -269,7 +267,7 @@ server:
 # strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
-# Finished Make data base on Fri Jul  1 09:20:50 2022
+# Finished Make data base on Fri Jul  1 09:31:30 2022
 
  
 Makefile:2: *** missing separator.  Stop.

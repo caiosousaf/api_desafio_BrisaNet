@@ -31,6 +31,7 @@ export default function BasicModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        aria-describedby="modal-modal-equipe"
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -45,6 +46,7 @@ export default function BasicModal() {
           margin="dense"
           fullWidth
          />
+         <TextField id="outlined-basic" label="Equipe" variant="outlined" margin="dense" fullWidth> </TextField>
         </Box>
       </Modal>
     </div>
