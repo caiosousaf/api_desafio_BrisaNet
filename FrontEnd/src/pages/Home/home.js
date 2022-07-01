@@ -1,6 +1,6 @@
 import Sidebar from "../../components/SideBar/SideBar";
 import Card from "../../components/Card";
-import BasicModal from '../../components/BasicModal'
+import BasicModal from '../../components/NewProject'
 
 function Menu_index() {
   return (
@@ -41,20 +41,8 @@ function Menu_index() {
         >
           <div className="col-8 mt-4">
             <div className="row CardsContainer my-4 mt-4 d-flex">
-              <div className="d-flex">
-                <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                  {" "}
-                  <Card />
-                </a>
-                <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                  {" "}
-                  <Card />
-                </a>
-                <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                  {" "}
-                  <Card />
-                </a>
-              </div>
+              <Card linkUrl={"projeto/:id"}/>
+              <Card linkUrl={"projeto/:id"}/>
             </div>
           </div>
 

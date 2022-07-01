@@ -2,7 +2,7 @@ import Header from "../../components/Header"
 import Card from "../../components/Card"
 import NewProject from '../../assets/icons/new.svg'
 import filter from '../../assets/icons/filter.svg'
-import BasicModal from '../../components/BasicModal'
+import BasicModal from '../../components/NewProject'
 
 function ProjetoIndex() {
     return (
@@ -30,60 +30,12 @@ function ProjetoIndex() {
                 </div>
 
                 <div className="row CardsContainer my-4">
-                    
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                    
-                    
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                    
-                    
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                        <a href={"projeto/:id"} className="text-reset text-decoration-none">
-                            {" "}
-                            <Card />
-                        </a>
-                    
+                    <Card linkUrl={"../projeto/:id"}/>
+                    <Card linkUrl={"../projeto/:id"}/>
+                    <Card linkUrl={"../projeto/:id"}/>
+                    <Card linkUrl={"../projeto/:id"}/>
+                    <Card linkUrl={"../projeto/:id"}/>
+                    <Card linkUrl={"../projeto/:id"}/>
                 </div>
 
             </main>
