@@ -59,29 +59,29 @@ function Menu_index() {
             </div>
             </div>
 
-          <div className="col-4 ms-3">
+          
             <div
-              className="cardLateralHome col-lg-3 col-md-12 p-4 mt-5 "
-              style={{ width: "100%" }}
+              className="cardLateralHome d-flex align-items-center col-lg-4 col-md-12 p-4 mt-5 "
             >
+              <div className="d-flex align-items-center justify-content-center">
                 <div className="Resumo col-md-12 col-lg-6 justify-content-center">
                     <div className="TotColaboradores row d-flex align-items-center justify-content-center">
                         <h6 className="col-3 d-flex justify-content-end">11</h6>
-                        <p className="col-5">Total de Colaboradores</p>        
+                        <p className="col-5">Total de Equipes</p>        
                     </div>
                     <div className="row">
                         <div className="TotTarefas col d-flex flex-column align-items-center justify-content-center">
                             <h6 className="col">60</h6>
-                            <p className="text-center col">Total de Tarefas</p>
+                            <p className="text-center col">Total de Projetos</p>
                         </div>
                         <div className="col d-flex flex-column align-items-center justify-content-center">
                             <div className="TarefasAnd row d-flex align-items-center justify-content-center">
                                 <h6 className="col-4">12</h6>
-                                <p className="col-7">Tarefa em Andamento</p>
+                                <p className="col-7">Projetos em Andamento</p>
                             </div>
                             <div className="TarefasConc row d-flex align-items-center justify-content-center">
                                 <h6 className="col-4">48</h6>
-                                <p className="col-7">Tarefas Concluídas</p>
+                                <p className="col-7">Projetos Concluídos</p>
                             </div>
                         </div>
                     </div>
