@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import Modal from '@mui/material/Modal';
+import BasicSelect from '../../components/Select'
 import NewProject from '../../assets/icons/new.svg'
 
 const style = {
@@ -15,7 +15,8 @@ const style = {
   bgcolor: '#494A58',
   borderRadius: 5,
   boxShadow: 24,
-  p: 5
+  p: 5,
+  color: '#F4F5FA'
 };
 
 export default function BasicModal() {
@@ -45,6 +46,7 @@ export default function BasicModal() {
           margin="dense"
           fullWidth
          />
+         <BasicSelect />
         </Box>
       </Modal>
     </div>
