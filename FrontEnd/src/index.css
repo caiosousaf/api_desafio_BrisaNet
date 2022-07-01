@@ -84,6 +84,10 @@ body {
     color: var(--laranja);
 }
 
+.nomeEquipe{
+    color: var(--laranja);
+}
+
 main h1 {
     color: var(--laranja);
 }
