@@ -26,7 +26,7 @@ function SideBar() {
                     </li>
                     <li className="nav-item">
                     <Link to="/projetos" >
-                        {location.pathname === "/projetos"
+                        {location.pathname === "/projetos" || location.pathname === "/projeto/:id"
                         ? <img src={projectActive} alt=""/>
                         : <img src={project} alt=""/>
                         }
