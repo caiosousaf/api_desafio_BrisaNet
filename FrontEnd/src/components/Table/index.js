@@ -20,30 +20,16 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
 
-function createData(name, calories, fat, carbs, protein) {
+function createData(id, nome, idTarefa) {
   return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
+    id,
+    nome,
+    idTarefa
   };
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+  createData(28,'Fulano de Tal', '20, 02, 09...'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -78,35 +64,23 @@ function stableSort(array, comparator) {
 
 const headCells = [
   {
-    id: 'name',
+    id: 'id',
     numeric: false,
     disablePadding: true,
     label: 'Dessert (100g serving)',
   },
   {
-    id: 'calories',
+    id: 'nome',
     numeric: true,
     disablePadding: false,
     label: 'Calories',
   },
   {
-    id: 'fat',
+    id: 'id',
     numeric: true,
     disablePadding: false,
     label: 'Fat (g)',
-  },
-  {
-    id: 'carbs',
-    numeric: true,
-    disablePadding: false,
-    label: 'Carbs (g)',
-  },
-  {
-    id: 'protein',
-    numeric: true,
-    disablePadding: false,
-    label: 'Protein (g)',
-  },
+  }
 ];
 
 function EnhancedTableHead(props) {
@@ -308,7 +282,7 @@ export default function EnhancedTable() {
                     >
                       <TableCell padding="checkbox">
                         <Checkbox
-                          color="primary"
+                          color="secondary"
                           checked={isItemSelected}
                           inputProps={{
                             'aria-labelledby': labelId,
