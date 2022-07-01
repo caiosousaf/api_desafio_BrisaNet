@@ -9,12 +9,12 @@ function ProjetoIndex() {
             <main className='col-11 offset-1 col-lg-11 offset-lg-1 px-5'>
                 <Header />
 
-                <div className="Options row my-lg-4">
+                <div className="Options row my-lg-4 my-3">
                     <div className="LeftOptions col-lg-2 mt-sm-2">
                         <span className="me-2">Show:</span>
                         <input type="" name="txt-show" id="txt-show" size="1"/>
                     </div>
-                    <div className="RightOptions col-lg-2 offset-lg-8 mt-sm-2">
+                    <div className="RightOptions col-lg-2 offset-lg-8 offset-md-8 mt-sm-2 mt-2">
                         <button className="new-project me-3">
                         <img src={NewProject} alt=""/>
                         </button>

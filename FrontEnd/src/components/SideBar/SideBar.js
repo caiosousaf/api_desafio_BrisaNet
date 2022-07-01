@@ -15,40 +15,40 @@ function SideBar() {
         <div>
             <header className="col-1 col-lg-1 d-flex flex-column justify-content-center align-items-center">
                 <img className="logo mb-5" src={logo} alt=""/>
-            <ul className="nav flex-column gap-5 align-items-center">
-                <li className="nav-item">
-                <Link to="/" >
-                    {location.pathname === "/"
-                    ? <img src={homeActive} alt=""/>
-                    : <img src={home} alt=""/>
-                    }
-                </Link>               
-                </li>
-                <li className="nav-item">
-                <Link to="/projetos" >
-                    {location.pathname === "/projetos"
-                    ? <img src={projectActive} alt=""/>
-                    : <img src={project} alt=""/>
-                    }
-                </Link>  
-                </li>
-                <li className="nav-item">
-                <Link to="/equipes">
-                    {location.pathname === "/equipes"
-                    ? <img src={teamActive} alt=""/>
-                    : <img src={team} alt=""/>
-                    }
-                </Link>  
-                </li>
-                <li className="nav-item">
-                <Link to="/pessoas">
-                    {location.pathname === "/pessoas"
-                    ? <img src={personActive} alt=""/>
-                    : <img src={person} alt=""/>
-                    }
-                </Link>  
-                </li>
-            </ul>
+                <ul className="nav flex-column gap-5 align-items-center">
+                    <li className="nav-item">
+                    <Link to="/" >
+                        {location.pathname === "/"
+                        ? <img src={homeActive} alt=""/>
+                        : <img src={home} alt=""/>
+                        }
+                    </Link>               
+                    </li>
+                    <li className="nav-item">
+                    <Link to="/projetos" >
+                        {location.pathname === "/projetos"
+                        ? <img src={projectActive} alt=""/>
+                        : <img src={project} alt=""/>
+                        }
+                    </Link>  
+                    </li>
+                    <li className="nav-item">
+                    <Link to="/equipes">
+                        {location.pathname === "/equipes"
+                        ? <img src={teamActive} alt=""/>
+                        : <img src={team} alt=""/>
+                        }
+                    </Link>  
+                    </li>
+                    <li className="nav-item">
+                    <Link to="/pessoas">
+                        {location.pathname === "/pessoas"
+                        ? <img src={personActive} alt=""/>
+                        : <img src={person} alt=""/>
+                        }
+                    </Link>  
+                    </li>
+                </ul>
             </header>
         </div>
     );
