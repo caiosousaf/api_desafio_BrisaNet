@@ -1,5 +1,6 @@
 import Sidebar from "../../components/SideBar/SideBar";
 import Card from "../../components/Card";
+import BasicModal from '../../components/NewProject'
 
 function Menu_index() {
   return (
@@ -22,9 +23,7 @@ function Menu_index() {
             <span className="me-2">Projetos recentes</span>
           </div>
           <div className="RightOptions col-lg-2 offset-lg-8 mt-sm-2">
-            <button className="new-project me-3">
-              <img src={"../../assets/icons/new.svg"} />
-            </button>
+            <BasicModal />
 
             <select className="ps-1 me-3" name="order-select" id="order-select">
               <option value="crescente">A - Z</option>
@@ -61,27 +60,35 @@ function Menu_index() {
 
           
             <div
-              className="cardLateralHome d-flex align-items-center col-lg-4 col-md-12 p-4 mt-5 "
+              className="cardLateralHome d-flex justify-content-center col-lg-4 col-md-12 p-4 mt-5 "
             >
               <div className="d-flex align-items-center justify-content-center">
-                <div className="Resumo col-md-12 col-lg-6 justify-content-center">
-                    <div className="TotColaboradores row d-flex align-items-center justify-content-center">
-                        <h6 className="col-3 d-flex justify-content-end">11</h6>
-                        <p className="col-5">Total de Equipes</p>        
+                <div className="Resumo col-md-12 col-lg-12 justify-content-center ">
+                    <div className="TotColaboradores d-flex align-items-center justify-content-center col-12">
+                        <h6 >11</h6>
+                        <strong>
+                          <p className="ms-4 ">Total de <br/> Equipes</p>    
+                        </strong>    
                     </div>
-                    <div className="row">
-                        <div className="TotTarefas col d-flex flex-column align-items-center justify-content-center">
+                    <div className="row col-12">
+                        <div className="TotTarefas col-6 d-flex flex-column align-items-center justify-content-center">
                             <h6 className="col">60</h6>
-                            <p className="text-center col">Total de Projetos</p>
+                            <strong>
+                              <p className="text-center col">Total de <br/> Projetos</p>
+                            </strong>
                         </div>
-                        <div className="col d-flex flex-column align-items-center justify-content-center">
-                            <div className="TarefasAnd row d-flex align-items-center justify-content-center">
-                                <h6 className="col-4">12</h6>
-                                <p className="col-7">Projetos em Andamento</p>
+                        <div className="col-6 d-flex flex-column align-items-center justify-content-center">
+                            <div className="TarefasAnd d-flex align-items-center justify-content-center">
+                                <h6 className="col-4 md-5" style={{fontFamily: "'Roboto Mono', monospace"}}>13</h6>
+                                <strong>
+                                  <p className="ms-2">Projetos em Andamento</p>
+                                </strong>
                             </div>
-                            <div className="TarefasConc row d-flex align-items-center justify-content-center">
-                                <h6 className="col-4">48</h6>
-                                <p className="col-7">Projetos Concluídos</p>
+                            <div className="TarefasConc d-flex align-items-center justify-content-center">
+                                <h6 className="col-4 md-5" style={{fontFamily: "'Roboto Mono', monospace"}}>47</h6>
+                                <strong>
+                                  <p className=" ms-2">Projetos Concluídos</p>
+                                </strong>
                             </div>
                         </div>
                     </div>

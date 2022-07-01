@@ -1,11 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
 import Modal from '@mui/material/Modal';
-import BasicSelect from '../../components/Select'
 import NewProject from '../../assets/icons/new.svg'
 
 const style = {
@@ -16,8 +15,7 @@ const style = {
   bgcolor: '#494A58',
   borderRadius: 5,
   boxShadow: 24,
-  p: 5,
-  color: '#F4F5FA'
+  p: 5
 };
 
 export default function BasicModal() {
@@ -33,6 +31,7 @@ export default function BasicModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        aria-describedby="modal-modal-equipe"
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2" className='text-center'>
@@ -43,7 +42,7 @@ export default function BasicModal() {
           id="outlined-multiline-flexible"
           label="Descrição"
           multiline
-          maxRows={6}
+          maxRows={4}
           margin="dense"
           fullWidth className='textField'
          />
