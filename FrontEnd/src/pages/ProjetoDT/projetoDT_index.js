@@ -9,33 +9,25 @@ const projetoDT_index = () => {
             <main className='col-11 offset-1 col-lg-11 offset-lg-1 px-5'>
                 <HeaderDt nomeProjeto="API Rest"/>
                 <div className="row gap-3">
-                    <div className="CardDT InfoProjeto row">
-                        <div className="col-12 col-lg-5">
+                    <div className="CardDT InfoProjeto row py-4">
+                        <div className="col-12 col-lg-5 me-4">
                             <h4>Descrição</h4>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
                         </div>
-                        <div className="col-12 col-lg-6">
+                        <div className="col-12 col-lg-6 ms-5">
                             <div>
                                 <div>
                                     <h4 className="text-center">Funções</h4>
                                     <div className="d-flex justify-content-between">
                                         <div>
-                                            <h6>Gerente de Projeto</h6>
+                                            <h6 style={{color: "#F46E27"}}>Gerente de Projeto</h6>
                                             <ul>
                                                 <li>Fulano de Tal</li>
                                             </ul>
                                         </div>
 
                                         <div>
-                                            <h6>Dev. BackEnd</h6>
-                                            <ul>
-                                                <li>Fulano de Tal</li>
-                                                <li>Fulano de Tal</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h6>Dev. FrontEnd</h6>
+                                            <h6 style={{color: "#F46E27"}}>Dev. BackEnd</h6>
                                             <ul>
                                                 <li>Fulano de Tal</li>
                                                 <li>Fulano de Tal</li>
@@ -43,7 +35,15 @@ const projetoDT_index = () => {
                                         </div>
 
                                         <div>
-                                            <h6>Tester</h6>
+                                            <h6 style={{color: "#F46E27"}}>Dev. FrontEnd</h6>
+                                            <ul>
+                                                <li>Fulano de Tal</li>
+                                                <li>Fulano de Tal</li>
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h6 style={{color: "#F46E27"}}>Tester</h6>
                                             <ul>
                                                 <li>Fulano de Tal</li>
                                                 <li>Fulano de Tal</li>
@@ -58,7 +58,7 @@ const projetoDT_index = () => {
                                     <h6>Progresso</h6>
                                     <CircularProgressWithLabel value="20" />
                                     </div>
-                                    <div className="Resumo col-md-12 col-lg-12 justify-content-center ">
+                                    <div className="Resumo col-md-12 col-lg-9 offset-lg-4 justify-content-center ">
                                         <div className="TotColaboradores d-flex align-items-center justify-content-center col-12">
                                             <h6 >11</h6>
                                             <strong>
@@ -93,7 +93,7 @@ const projetoDT_index = () => {
                         </div>                        
                     </div>
 
-                    <div className="row">
+                    <div className="row d-flex gap-4">
                         <div className="CardDT col">
                             <Table />
                         </div>

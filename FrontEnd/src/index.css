@@ -199,10 +199,6 @@ main h1 {
     transition: 0.5s;
 }
 
-.CardDT > div {
-    border: 1px solid #093D93;
-}
-
 .ProjetoEquipe, .ProjetoTarefas {
     height: 30vh;
 }

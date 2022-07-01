@@ -20,9 +20,9 @@ function Menu_index() {
           />
         </div>
 
-        <div className="Options row align-items-center my-lg-4">
+        <div className="Options row align-items-center mt-lg-4">
           <div className="LeftOptions col-lg-2 mt-sm-2">
-            <span className="me-2">Projetos recentes</span>
+            <span className="me-2 fs-4">Projetos recentes</span>
           </div>
           <div className="RightOptions d-flex col-lg-2 offset-lg-8 mt-sm-2">
             <BasicModal />
@@ -41,7 +41,7 @@ function Menu_index() {
           className="d-flex justify-content-between"
           style={{ width: "100%" }}
         >
-          <div className="col-8 mt-4 ms-3">
+          <div className="col-8 mt-2 ms-3">
             <div className="row CardsContainer my-4 mt-4 d-flex">
               <Card linkUrl={"projeto/:id"} />
               <Card linkUrl={"projeto/:id"} />
@@ -52,7 +52,7 @@ function Menu_index() {
 
           <div >
             <div
-              className="cardLateralHome d-flex justify-content-center col-lg-12 col-md-12 p-4 mt-5 "
+              className="cardLateralHome d-flex justify-content-center col-lg-12 col-md-12 p-4 mt-4 "
             >
               <div className="d-flex align-items-center justify-content-center">
                 <div className="Resumo col-md-12 col-lg-12 justify-content-center ">
@@ -114,7 +114,7 @@ function Menu_index() {
                   </div>
                 </td>
                 <td>Em Andamento</td>
-                <td><Link to="projeto/:id"><Button style={{
+                <td><Link to="projeto/:id" className="text-reset text-decoration-none"><Button style={{
                   color: "#F4F5FA",
                   background: "#F46E27"
                 }}
@@ -130,7 +130,7 @@ function Menu_index() {
 
                 </td>
                 <td>Concluído</td>
-                <td><Link to="projeto/:id"><Button style={{
+                <td><Link to="projeto/:id"  className="text-reset text-decoration-none"><Button style={{
                   color: "#F4F5FA",
                   background: "#F46E27"
                 }}
@@ -145,7 +145,7 @@ function Menu_index() {
                   </div>
                 </td>
                 <td>Em Andamento</td>
-                <td><Link to="projeto/:id"><Button style={{
+                <td><Link to="projeto/:id"  className="text-reset text-decoration-none"><Button style={{
                   color: "#F4F5FA",
                   background: "#F46E27"
                 }}
