@@ -35,17 +35,17 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-title" variant="h6" component="h2" className='text-center'>
             Adicionar Projeto
           </Typography>
-          <TextField required id="outlined-basic" label="Nome" variant="outlined" margin="dense" fullWidth/>
+          <TextField required id="outlined-basic" label="Nome" variant="outlined" margin="dense" fullWidth className='textField'/>
           <TextField
           id="outlined-multiline-flexible"
           label="Descrição"
           multiline
           maxRows={6}
           margin="dense"
-          fullWidth
+          fullWidth className='textField'
          />
          <BasicSelect />
         <div className='d-flex justify-content-end mt-5'>
@@ -53,7 +53,7 @@ export default function BasicModal() {
             color: "#F4F5FA",
             opacity: 0.5
           }} 
-          variant="text">Cancelar</Button>
+          variant="text" className=''>Cancelar</Button>
           <Button style={{
             color: "#F4F5FA",
             background: "#F46E27"
