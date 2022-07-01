@@ -7,7 +7,7 @@ function ProjetoIndex() {
     return (
         <>
             <main className='col-11 offset-1 col-lg-11 offset-lg-1 px-5'>
-                <Header />
+                <Header titulo="Projetos"/>
 
                 <div className="Options row my-lg-4 my-3">
                     <div className="LeftOptions col-lg-2 mt-sm-2">

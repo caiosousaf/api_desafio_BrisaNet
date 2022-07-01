@@ -51,6 +51,18 @@ body {
     color: var(--branco);
 }
 
+.Titulo {
+    color: var(--laranja);
+}
+
+.TituloDt {
+    color: var(--branco);
+}
+
+.nomeProjeto {
+    color: var(--laranja);
+}
+
 main h1 {
     color: var(--laranja);
 }
