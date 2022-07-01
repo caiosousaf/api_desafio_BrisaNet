@@ -115,7 +115,7 @@ main h1 {
     border-bottom: 0.15px solid #2C2E3B;
 }
 
-.LeftOptions > span {
+.LeftOptions > span, th {
     color: var(--cinza);
 }
 

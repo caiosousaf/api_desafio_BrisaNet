@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+Makefile:2: *** missing separator.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul  1 09:31:30 2022
+# Make data base, printed on Fri Jul  1 10:44:16 2022
 
 # Variables
 
@@ -67,7 +69,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 2121
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-1e7cd960-741d-438e-afbf-25d69fb8c50d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-021269d2-7a02-4275-9f03-ce4f37446f87.sock
 # environment
 VSCODE_CWD = /home/brisa
 # environment
@@ -99,7 +101,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2858
+GIO_LAUNCHED_DESKTOP_FILE_PID = 25359
 # automatic
 %F = $(notdir $%)
 # environment
@@ -209,7 +211,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 15833
+VSCODE_PID = 25767
 # variable set hash-table stats:
 # Load=100/1024=10%, Rehash=0, Collisions=13/114=11%
 
@@ -219,7 +221,7 @@ VSCODE_PID = 15833
 
 # Directories
 
-# . (device 66307, inode 14826638): 13 files, no impossibilities.
+# . (device 66307, inode 14828027): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
 
@@ -267,8 +269,6 @@ server:
 # strcache performance: lookups = 24 / hit rate = 20%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/24=4%
-# Finished Make data base on Fri Jul  1 09:31:30 2022
+# Finished Make data base on Fri Jul  1 10:44:16 2022
 
  
-Makefile:2: *** missing separator.  Stop.
-
