@@ -1,10 +1,10 @@
-import Header from "../../components/Header"
+import HeaderDt from "../../components/HeaderDt"
 
 const projetoDT_index = () => {
     return(
         <>
             <main className='col-11 offset-1 col-lg-11 offset-lg-1 px-5'>
-                <Header />
+                <HeaderDt nomeProjeto="API Rest"/>
                 <div className="row gap-3">
                     <div className="CardDT InfoProjeto row">
                         <div className="col-12 col-lg-5">

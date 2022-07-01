@@ -33,23 +33,16 @@ header {
     background-color: #191A23;
     height: 100vh;
     box-shadow: 0 30px 60px rgb(0, 0, 0, 0.3);
+    min-width: 60px;
 }
 
 .logo {
-    max-width: 2rem;
-}
-
-
-header li {
-    margin: 1rem 0;
-}
-
-header li img {
-    max-width: 2rem;
+    max-width: 2.2rem;
+    padding-bottom: 4rem;
 }
 
 .nav-item:hover {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 .azulzinhoClaro{
@@ -68,15 +61,8 @@ body {
     color: var(--branco);
 }
 
-.Card {
-    background-color: var(--preto-medio);
-    max-width: 22.67rem;
-    min-width: 18.27rem;
-    height: 350px;
-    border-radius: 10px;
-    gap: 2rem;
-    box-shadow: 0px 2px 12px 5px rgb(0, 0, 0, 0.08);
-    transition: 0.5s;
+.Titulo {
+    color: var(--laranja);
 }
 
 .cardLateralHome{
@@ -90,13 +76,12 @@ body {
     height: 400px;
 }
 
-.Card:hover {
-    transform: scale(1.03);
-    transition: 0.5s;
+.nomeProjeto {
+    color: var(--laranja);
 }
 
-.CardsContainer {
-    /*border: 1px solid white;*/
+main h1 {
+    color: var(--laranja);
 }
 
 .linha{
@@ -120,23 +105,12 @@ body {
 }
 
 #main-search:focus {
-    background-color: var(--preto-claro);
-}
-
-main h1 {
-    color: var(--laranja);
-}
-
-.CardsContainer {
-    gap: 2rem;
+    background-color: #2b2c3b;
+    transition: 0.2s;
 }
 
 .main-header {
     border-bottom: 0.15px solid #2C2E3B;
-}
-
-.Options {
-    /*border: 1px solid white;*/
 }
 
 .LeftOptions > span {
@@ -168,6 +142,31 @@ main h1 {
     color: var(--cinza);
     border: 1px solid var(--cinza) !important;
     border-radius: 5px;
+}
+
+.Card {
+    background-color: var(--preto-medio);
+    max-width: 22.67rem;
+    min-width: 18.27rem;
+    height: 350px;
+    border-radius: 10px;
+    gap: 2rem;
+    box-shadow: 0px 2px 12px 5px rgb(0, 0, 0, 0.08);
+    transition: 0.5s;
+}
+
+.cardLateralHome{
+    background-color: var(--preto-medio);
+    height: 350px;
+}
+
+.Card:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+.CardsContainer {
+    gap: 2rem;
 }
 
 .card-part1 {
