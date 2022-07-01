@@ -2,6 +2,7 @@ import Header from "../../components/Header"
 import Card from "../../components/Card"
 import NewProject from '../../assets/icons/new.svg'
 import filter from '../../assets/icons/filter.svg'
+import BasicModal from '../../components/NewProject'
 
 function ProjetoIndex() {
     return (
@@ -15,9 +16,7 @@ function ProjetoIndex() {
                         <input type="" name="txt-show" id="txt-show" size="1" />
                     </div>
                     <div className="RightOptions col-lg-2 offset-lg-8 offset-md-8 mt-sm-2 mt-2">
-                        <button className="new-project me-3">
-                            <img src={NewProject} alt="" />
-                        </button>
+                        <BasicModal />
 
                         <select className="ps-1 me-3" name="order-select" id="order-select">
                             <option value="crescente">A - Z</option>

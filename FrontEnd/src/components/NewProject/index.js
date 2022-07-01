@@ -2,6 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
 import Modal from '@mui/material/Modal';
 import NewProject from '../../assets/icons/new.svg'
 
@@ -10,11 +12,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: '#494A58',
+  borderRadius: 5,
   boxShadow: 24,
-  p: 4,
+  p: 5
 };
 
 export default function BasicModal() {
@@ -33,11 +34,17 @@ export default function BasicModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            Adicionar Projeto
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <TextField id="outlined-basic" label="Nome" variant="outlined" margin="dense" fullWidth/>
+          <TextField
+          id="outlined-multiline-flexible"
+          label="Descrição"
+          multiline
+          maxRows={4}
+          margin="dense"
+          fullWidth
+         />
         </Box>
       </Modal>
     </div>
