@@ -1,0 +1,3 @@
+<button className="filter px-2 py-1">
+                            <span>Filter</span> <img src={filter} alt="" />
+                        </button>

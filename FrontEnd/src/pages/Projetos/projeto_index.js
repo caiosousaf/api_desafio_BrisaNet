@@ -3,6 +3,7 @@ import Card from "../../components/Card"
 import NewProject from '../../assets/icons/new.svg'
 import filter from '../../assets/icons/filter.svg'
 import BasicModal from '../../components/NewProject'
+import FilterMenu from "../../components/FilterMenu"
 
 function ProjetoIndex() {
     return (
@@ -10,7 +11,7 @@ function ProjetoIndex() {
             <main className='col-11 offset-1 col-lg-11 offset-lg-1 px-5'>
                 <Header titulo="Projetos" />
 
-                <div className="Options row d-flex my-lg-4 my-3">
+                <div className="Options row d-flex flex-wrap my-lg-4 my-3">
                     <div className="LeftOptions col mt-sm-2">
                         <span className="me-2">Show:</span>
                         <input type="" name="txt-show" id="txt-show" size="1" />
