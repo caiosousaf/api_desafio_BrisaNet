@@ -14,10 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+
 import { visuallyHidden } from '@mui/utils';
 
 function createData(id, nome, idTarefa) {
@@ -30,6 +27,8 @@ function createData(id, nome, idTarefa) {
 
 const rows = [
   createData(28,'Fulano de Tal', '20, 02, 09...'),
+  createData(15,'Fulaninho', '04, 78, 21...'),
+  createData(7,'Fulano', '07, 03')
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -65,21 +64,21 @@ function stableSort(array, comparator) {
 const headCells = [
   {
     id: 'id',
-    numeric: false,
+    numeric: true,
     disablePadding: true,
-    label: 'Dessert (100g serving)',
+    label: '#',
   },
   {
     id: 'nome',
-    numeric: true,
+    numeric: false,
     disablePadding: false,
-    label: 'Calories',
+    label: 'Nome',
   },
   {
-    id: 'id',
-    numeric: true,
+    id: 'idTarefa',
+    numeric: false,
     disablePadding: false,
-    label: 'Fat (g)',
+    label: 'Id Tarefas',
   }
 ];
 
@@ -156,7 +155,7 @@ const EnhancedTableToolbar = (props) => {
       {numSelected > 0 ? (
         <Typography
           sx={{ flex: '1 1 100%' }}
-          color="inherit"
+          color="inherit" //cor do texto que mostra quantos estão selecionados
           variant="subtitle1"
           component="div"
         >
@@ -169,7 +168,7 @@ const EnhancedTableToolbar = (props) => {
           id="tableTitle"
           component="div"
         >
-          Nutrition
+          Equipe <span style={{color: '#F46E27'}}>Komanda</span>
         </Typography>
       )}
 
@@ -183,7 +182,7 @@ EnhancedTableToolbar.propTypes = {
 
 export default function EnhancedTable() {
   const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [orderBy, setOrderBy] = React.useState('id');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -282,7 +281,7 @@ export default function EnhancedTable() {
                     >
                       <TableCell padding="checkbox">
                         <Checkbox
-                          color="secondary"
+                          color="primary"
                           checked={isItemSelected}
                           inputProps={{
                             'aria-labelledby': labelId,
@@ -297,10 +296,9 @@ export default function EnhancedTable() {
                       >
                         {row.name}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
+                      <TableCell align="center">{row.id}</TableCell>
+                      <TableCell align="center">{row.nome}</TableCell>
+                      <TableCell align="center">{row.idTarefa}</TableCell>
                     </TableRow>
                   );
                 })}
