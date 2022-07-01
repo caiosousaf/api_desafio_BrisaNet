@@ -94,7 +94,7 @@ function Menu_index() {
           <div className="LeftOptions col-lg-2 mt-sm-2">
             <span className="me-2 ms-4 mt-3">Projetos</span>
           </div>
-          <table class="table table-hover" style={{ color: 'white' }}>
+          <table class="table" style={{ color: 'white' }}>
             <thead>
               <tr className="LeftOptions">
                 <th scope="col" style={{ width: '10%', marginBottom: '40px' }}>#</th>
@@ -104,7 +104,7 @@ function Menu_index() {
                 <th scope="col" style={{ width: '10%' }}></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="">
               <tr>
                 <th scope="row">1</th>
                 <td>projeto API</td>
