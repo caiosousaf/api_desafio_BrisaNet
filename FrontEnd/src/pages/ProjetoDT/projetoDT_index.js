@@ -1,6 +1,7 @@
 import HeaderDt from "../../components/HeaderDt"
 import Divider from '@mui/material/Divider';
 import CircularProgressWithLabel from '../../components/CircularProgressWithLabel'
+import Table from "../../components/Table";
 
 const projetoDT_index = () => {
     return(
@@ -90,6 +91,15 @@ const projetoDT_index = () => {
                                 </div>
                             </div>
                         </div>                        
+                    </div>
+
+                    <div className="row">
+                        <div className="CardDT col">
+                            <Table />
+                        </div>
+                        <div className="CardDT col">
+                            B
+                        </div>
                     </div>
                        
                 </div>
