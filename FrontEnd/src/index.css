@@ -36,20 +36,17 @@ header {
 }
 
 .logo {
-    max-width: 2rem;
+    max-width: 2.2rem;
+    padding-bottom: 3rem;
 }
 
-
-header li {
-    margin: 1rem 0;
-}
 
 header li img {
     max-width: 2rem;
 }
 
 .nav-item:hover {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 body {

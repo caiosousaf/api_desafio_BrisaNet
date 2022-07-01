@@ -15,7 +15,7 @@ function SideBar() {
         <div>
             <header className="col-1 col-lg-1 d-flex flex-column justify-content-center align-items-center">
                 <img className="logo mb-5" src={logo} alt=""/>
-            <ul className="nav flex-column align-items-center">
+            <ul className="nav flex-column gap-5 align-items-center">
                 <li className="nav-item">
                 <Link to="/" >
                     {location.pathname === "/"
