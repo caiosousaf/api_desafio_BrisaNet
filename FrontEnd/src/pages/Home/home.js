@@ -43,15 +43,15 @@ function Menu_index() {
           <div className="col-8 mt-4">
             <div className="row CardsContainer my-4 mt-4 d-flex">
                 <div className="d-flex">
-                    <a href="" className="text-reset text-decoration-none">
+                    <a href={"projeto/:id"} className="text-reset text-decoration-none">
                       {" "}
                       <Card />
                     </a>
-                    <a href="" className="text-reset text-decoration-none">
+                    <a href={"projeto/:id"} className="text-reset text-decoration-none">
                       {" "}
                       <Card />
                     </a>
-                    <a href="" className="text-reset text-decoration-none">
+                    <a href={"projeto/:id"} className="text-reset text-decoration-none">
                       {" "}
                       <Card />
                     </a>
@@ -65,7 +65,7 @@ function Menu_index() {
               style={{ width: "100%" }}
             >
               <div className="cardLateralHome ">
-                aaaaaaaaaaa
+                
                 
               </div>
             </div>
