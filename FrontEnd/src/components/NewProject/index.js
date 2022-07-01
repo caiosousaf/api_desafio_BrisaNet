@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import Modal from '@mui/material/Modal';
 import NewProject from '../../assets/icons/new.svg'
+import BasicSelect from '../Select/index.js'
 
 const style = {
   position: 'absolute',
