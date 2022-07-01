@@ -1,4 +1,6 @@
 import HeaderDt from "../../components/HeaderDt"
+import Divider from '@mui/material/Divider';
+import CircularProgressWithLabel from '../../components/CircularProgressWithLabel'
 
 const projetoDT_index = () => {
     return(
@@ -52,7 +54,8 @@ const projetoDT_index = () => {
 
                                 <div className="row">
                                     <div className="col-md-12 col-lg-6">
-                                        Gráfico
+                                    <h6>Progresso</h6>
+                                    <CircularProgressWithLabel value="20" />
                                     </div>
                                     <div className="Resumo col-md-12 col-lg-6">
                                         <div className="TotColaboradores row d-flex align-items-center justify-content-center">

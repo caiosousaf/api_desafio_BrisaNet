@@ -43,6 +43,7 @@ header {
 
 .nav-item:hover {
     opacity: 0.85;
+    transition: 0.3s;
 }
 
 .azulzinhoClaro{
@@ -226,10 +227,10 @@ main h1 {
     font-size: 2.5rem;
 }
 
-.Resumo, .TotColaboradores, .TotTarefas, .TarefasAnd, .TarefasConc {
+/*.Resumo, .TotColaboradores, .TotTarefas, .TarefasAnd, .TarefasConc {
     border: 1px solid wheat;
 }
 
 .TotColaboradores > *, .TotTarefas > *,  .TarefasAnd > *, .TarefasConc > *{
     border: 1px solid wheat;
-}
+}*/
