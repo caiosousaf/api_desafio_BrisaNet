@@ -64,12 +64,115 @@ function Menu_index() {
               className="cardlateraldireito col-lg-3 col-md-12 p-4 mt-4"
               style={{ width: "100%" }}
             >
-              <div className="cardLateralHome ">
-                
+              <div className="cardLateralHome d-flex justify-content-around ">
+                <div>
+                    <div className="d-center">
+                        <h1><span className="azulzinhoClaro">60</span></h1>
+                    </div>
+                    <div>
+                        total de projetos
+                    </div>
+
+                </div>
+                <div className="linhaVertical"></div>
+                <div>
+                    <div>
+                        <div>
+                        <h1><span className="">10</span></h1>
+                        </div>
+                        <div>
+                            em desenvolvimento
+                        </div>
+                    </div>
+                    <div>
+                    <div>
+                        <h1><span className="">50</span></h1>
+                        </div>
+                        <div>
+                            concluidos
+                        </div>
+                    </div>
+                </div>
                 
               </div>
             </div>
           </div>
+        </div>
+        <div className="CardBaixoHome">
+            <div className="LeftOptions col-lg-2 mt-sm-2">
+                <span className="me-2">Projetos</span>
+            </div>
+            <div className=" mt-4">
+                <div className="d-flex justify-content-around">
+                    <div>
+                        id
+                    </div>
+                    
+                    <div>
+                        Titulo
+                    </div>
+
+                    <div>
+                        barra progresso
+                    </div>
+
+                    <div>
+                        Status
+                    </div>
+                </div>
+                <div className="linha"></div>
+                <div className="d-flex justify-content-around mt-4">
+                    <div className="">
+                        05
+                    </div>
+                    <div className="">
+                        projeto API
+                    </div>
+                    <div className="">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
+                    </div>
+                    <div className="">
+                        Em andamento
+                    </div>
+                </div>
+                <div className="linha"></div>
+                <div className="d-flex justify-content-around mt-4">
+                    <div className="">
+                        35
+                    </div>
+                    <div className="">
+                        projeto API-2
+                    </div>
+                    <div className="">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
+                    </div>
+                    <div className="">
+                        Em andamento
+                    </div>
+                </div>
+                <div className="linha"></div>
+                <div className="d-flex justify-content-around mt-4">
+                    <div className="">
+                        05
+                    </div>
+                    <div className="">
+                        projeto API
+                    </div>
+                    <div className="">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
+                    </div>
+                    <div className="">
+                        Em andamento
+                    </div>
+                </div>
+            </div>
+            
         </div>
       </main>
     </div>

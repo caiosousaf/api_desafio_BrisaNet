@@ -52,6 +52,16 @@ header li img {
     opacity: 0.9;
 }
 
+.azulzinhoClaro{
+    color: #28AEF3;
+}
+
+.linhaVertical{
+    background-color: white;
+    opacity: 0.5;
+    width: 10px;
+}
+
 body {
     font-family: var(--inter);
     background-color: var(--preto);
@@ -72,6 +82,12 @@ body {
 .cardLateralHome{
     background-color: var(--preto-medio);
     height: 350px;
+    align-items: center;
+}
+
+.CardBaixoHome{
+    background-color: var(--preto-medio);
+    height: 400px;
 }
 
 .Card:hover {
@@ -81,6 +97,13 @@ body {
 
 .CardsContainer {
     /*border: 1px solid white;*/
+}
+
+.linha{
+    margin-top: 15px;
+    background-color: white;
+    opacity: 0.5;
+    height: 1px;
 }
 
 #main-search {
