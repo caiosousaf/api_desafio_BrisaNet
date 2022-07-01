@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
@@ -37,16 +38,28 @@ export default function BasicModal() {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Adicionar Projeto
           </Typography>
-          <TextField id="outlined-basic" label="Nome" variant="outlined" margin="dense" fullWidth/>
+          <TextField required id="outlined-basic" label="Nome" variant="outlined" margin="dense" fullWidth/>
           <TextField
           id="outlined-multiline-flexible"
           label="Descrição"
           multiline
-          maxRows={4}
+          maxRows={6}
           margin="dense"
           fullWidth
          />
          <BasicSelect />
+        <div className='d-flex justify-content-end mt-5'>
+          <Button style={{
+            color: "#F4F5FA",
+            opacity: 0.5
+          }} 
+          variant="text">Cancelar</Button>
+          <Button style={{
+            color: "#F4F5FA",
+            background: "#F46E27"
+          }}
+          variant="contained">Salvar</Button>
+        </div>
         </Box>
       </Modal>
     </div>
